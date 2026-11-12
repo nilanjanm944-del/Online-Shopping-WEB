@@ -10,7 +10,7 @@
  * or copyrighted photography is bundled with this project.
  */
 import bcrypt from 'bcryptjs';
-import { DEPARTMENTS, SPEC_TEMPLATES } from './data/catalogue.js';
+import { DEPARTMENTS, SPEC_TEMPLATES } from './catalogue-data.js';
 import { newId } from './store.js';
 
 const slugify = (s) =>
