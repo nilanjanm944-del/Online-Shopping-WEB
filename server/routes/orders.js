@@ -26,6 +26,7 @@ import {
   verifyPaymentSignature,
 } from '../payments.js';
 import { rateLimit } from '../lib/rate-limit.js';
+import { normalizeAddress, validateAddress } from '../lib/address.js';
 
 const router = express.Router();
 
@@ -48,26 +49,6 @@ function pushTimeline(order, status, note) {
   const timeline = Array.isArray(order.timeline) ? order.timeline : [];
   timeline.push({ status, note, at: nowIso() });
   return timeline;
-}
-
-function validateAddress(body) {
-  const a = body || {};
-  const required = {
-    full_name: 'Full name',
-    phone: 'Mobile number',
-    email: 'Email',
-    address_line1: 'Address',
-    city: 'City',
-    state: 'State',
-    pincode: 'PIN code',
-  };
-  for (const [field, label] of Object.entries(required)) {
-    if (!String(a[field] || '').trim()) return `${label} is required.`;
-  }
-  if (!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(String(a.email))) return 'Enter a valid email address.';
-  if (!/^[6-9]\d{9}$/.test(String(a.phone).replace(/\D/g, '').slice(-10))) return 'Enter a valid 10-digit Indian mobile number.';
-  if (!/^\d{6}$/.test(String(a.pincode).trim())) return 'Enter a valid 6-digit PIN code.';
-  return null;
 }
 
 /** Build order items from either the server cart or an explicit item list. */
@@ -148,7 +129,9 @@ router.post('/orders', requireAuth, rateLimit({ windowMs: 60_000, max: 20 }), (r
     if (!saved) return res.status(400).json({ error: 'Saved address not found.' });
     address = { ...saved };
   }
-  const addressError = validateAddress(address);
+  // Saved addresses may use name/line1 while checkout sends full_name/line1.
+  address = normalizeAddress(address);
+  const addressError = validateAddress(address, { requireEmail: true });
   if (addressError) return res.status(400).json({ error: addressError });
 
   const subtotal = items.reduce((s, i) => s + i.line_total, 0);

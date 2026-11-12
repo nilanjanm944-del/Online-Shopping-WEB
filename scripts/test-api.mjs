@@ -77,12 +77,12 @@ async function waitForServer(timeoutMs = 30_000) {
   return false;
 }
 
-/** Normalise list responses: { products } | { items } | array. */
+/** Normalise list responses: { products } | { categories } | { items } | array. */
 function listOf(data) {
   if (Array.isArray(data)) return data;
-  if (Array.isArray(data?.products)) return data.products;
-  if (Array.isArray(data?.items)) return data.items;
-  if (Array.isArray(data?.data)) return data.data;
+  for (const key of ['products', 'items', 'data', 'categories', 'orders', 'addresses', 'coupons']) {
+    if (Array.isArray(data?.[key])) return data[key];
+  }
   return [];
 }
 
@@ -146,10 +146,15 @@ async function run() {
       `${filteredList.length} items`
     );
 
-    const simple = products.find((p) => !(p.sizes?.length) && !(p.colors?.length)) || products[0];
-    const detail = await request(`/api/products/${simple.slug}`);
+    const candidate = products[0];
+    const detail = await request(`/api/products/${candidate.slug}`);
     check('GET /api/products/:slug returns 200', detail.status === 200);
     check('product detail has price and images', Number(detail.data?.product?.price) > 0 && (detail.data?.product?.images?.length || 0) > 0);
+
+    // Clothing/footwear products require a size and colour selection.
+    const simple = detail.data?.product || candidate;
+    const size = simple.sizes?.[0] ?? null;
+    const color = simple.colors?.[0] ?? null;
 
     const missing = await request('/api/products/this-slug-does-not-exist');
     check('unknown product returns 404', missing.status === 404, `status ${missing.status}`);
@@ -184,12 +189,17 @@ async function run() {
 
     const address = await request('/api/auth/addresses', { method: 'POST', body: ADDRESS, cookie: customer });
     check('POST /api/auth/addresses saves an address', address.status === 201 || address.status === 200, `status ${address.status}`);
+    check(
+      'saved address keeps the recipient name and address line',
+      address.data?.address?.full_name === ADDRESS.full_name && address.data?.address?.line1 === ADDRESS.line1,
+      JSON.stringify({ full_name: address.data?.address?.full_name, line1: address.data?.address?.line1 })
+    );
 
     /* ----------------------------- Cart flow ------------------------------ */
     section('Cart');
     const add = await request('/api/cart', {
       method: 'POST',
-      body: { product_id: simple.id, qty: 1 },
+      body: { product_id: simple.id, qty: 1, size, color },
       cookie: customer,
     });
     check('POST /api/cart adds an item', add.status === 201, `status ${add.status}`);
@@ -228,7 +238,7 @@ async function run() {
     section('Orders');
     const idempotency_key = `test-${Date.now()}`;
     const orderBody = {
-      items: [{ product_id: simple.id, qty: 1 }],
+      items: [{ product_id: simple.id, qty: 1, size, color }],
       address: ADDRESS,
       payment_method: 'cod',
       idempotency_key,
@@ -251,7 +261,7 @@ async function run() {
 
     const badAddress = await request('/api/orders', {
       method: 'POST',
-      body: { items: [{ product_id: simple.id, qty: 1 }], address: { ...ADDRESS, pincode: '12' }, payment_method: 'cod' },
+      body: { items: [{ product_id: simple.id, qty: 1, size, color }], address: { ...ADDRESS, pincode: '12' }, payment_method: 'cod' },
       cookie: customer,
     });
     check('invalid PIN code is rejected', badAddress.status === 400, `status ${badAddress.status}`);
