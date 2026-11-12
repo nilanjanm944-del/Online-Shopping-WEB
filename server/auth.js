@@ -34,16 +34,31 @@ export function signToken(user) {
   return jwt.sign({ sub: user.id, role: user.role, email: user.email }, SECRET, { expiresIn: TOKEN_TTL });
 }
 
-export function setSessionCookie(res, token) {
-  const secure = process.env.NODE_ENV === 'production' ? '; Secure' : '';
-  res.setHeader(
-    'Set-Cookie',
-    `${COOKIE_NAME}=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${7 * 24 * 3600}${secure}`
-  );
+/**
+ * Cookie attributes for this request. A cross-site caller (the GitHub Pages
+ * build on another origin) needs SameSite=None + Secure, otherwise the browser
+ * refuses to store or send the session cookie.
+ */
+function cookieAttributes(req) {
+  const origin = req?.headers?.origin;
+  let crossSite = process.env.CROSS_SITE_COOKIES === 'true';
+  if (!crossSite && origin) {
+    try {
+      crossSite = new URL(origin).host !== req.headers.host;
+    } catch {
+      crossSite = false;
+    }
+  }
+  const secure = process.env.NODE_ENV === 'production' || crossSite ? '; Secure' : '';
+  return `; Path=/; HttpOnly; SameSite=${crossSite ? 'None' : 'Lax'}${secure}`;
 }
 
-export function clearSessionCookie(res) {
-  res.setHeader('Set-Cookie', `${COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`);
+export function setSessionCookie(res, token, req) {
+  res.setHeader('Set-Cookie', `${COOKIE_NAME}=${token}${cookieAttributes(req)}; Max-Age=${7 * 24 * 3600}`);
+}
+
+export function clearSessionCookie(res, req) {
+  res.setHeader('Set-Cookie', `${COOKIE_NAME}=${cookieAttributes(req)}; Max-Age=0`);
 }
 
 function parseCookies(header = '') {

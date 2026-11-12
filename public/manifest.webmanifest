@@ -1,0 +1,19 @@
+{
+  "name": "ZYREX STORE",
+  "short_name": "ZYREX",
+  "description": "Multi-category online marketplace for fashion, electronics, home and kitchen, grocery, beauty, sports, books, toys, automotive and pet supplies.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

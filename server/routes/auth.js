@@ -47,7 +47,7 @@ router.post('/register', rateLimit({ windowMs: 60_000, max: 10 }), (req, res) =>
     phone: String(phone || '').trim(),
     email_verified: false,
   });
-  setSessionCookie(res, signToken(user));
+  setSessionCookie(res, signToken(user), req);
   return res.status(201).json({ user: publicUser(user), email_verification: 'pending' });
 });
 
@@ -59,12 +59,12 @@ router.post('/login', rateLimit({ windowMs: 60_000, max: 12 }), (req, res) => {
   if (!user || !verifyPassword(password, user.password_hash)) {
     return res.status(401).json({ error: 'Incorrect email or password.' });
   }
-  setSessionCookie(res, signToken(user));
+  setSessionCookie(res, signToken(user), req);
   return res.json({ user: publicUser(user) });
 });
 
 router.post('/logout', (req, res) => {
-  clearSessionCookie(res);
+  clearSessionCookie(res, req);
   res.json({ ok: true });
 });
 

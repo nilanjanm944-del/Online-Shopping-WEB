@@ -2,11 +2,12 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { discountOf, inr } from '../lib/format';
+import { imageUrl } from '../lib/api';
 import { useStore } from '../context/StoreProvider';
 
 export const cx = (...parts) => parts.filter(Boolean).join(' ');
 
-const FALLBACK_IMG = '/api/img/product/zyrex-fallback.svg?glyph=box&hue=250&label=ZYREX';
+const FALLBACK_IMG = imageUrl('/api/img/product/zyrex-fallback.svg?glyph=box&hue=250&label=ZYREX');
 
 export function Spinner({ className = 'h-5 w-5' }) {
   return <span className={cx('inline-block animate-spin rounded-full border-2 border-current border-t-transparent', className)} aria-hidden="true" />;

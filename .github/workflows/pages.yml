@@ -1,0 +1,59 @@
+name: Deploy storefront to GitHub Pages
+
+# Builds the real React storefront and publishes it to GitHub Pages.
+# The static site calls the live API at VITE_API_BASE (change it below if your
+# backend URL changes).
+
+on:
+  push:
+    branches: [main, appjet]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build static storefront
+        env:
+          # Pages serves the project at https://<owner>.github.io/<repository>/
+          VITE_BASE_PATH: /Online-Shopping-WEB/
+          # Live backend (auth, catalogue, cart, orders, admin)
+          VITE_API_BASE: https://vulesrkzir.dev.onappjet.com
+        run: npm run build
+
+      - name: Add SPA fallback so deep links survive a refresh
+        run: cp dist/index.html dist/404.html
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -42,6 +42,54 @@ app.use((req, res, next) => {
   next();
 });
 
+// --- CORS for a separately hosted client (for example GitHub Pages) --------
+// The React build may be served from another origin. Only allowlisted origins
+// may call the API with credentials, and state-changing requests arriving from
+// an unexpected origin are rejected, so the session cookie cannot be reused for
+// cross-site requests. Same-origin calls are always permitted.
+const ALLOWED_ORIGINS = (process.env.CORS_ORIGINS || 'https://nilanjanm944-del.github.io')
+  .split(',')
+  .map((origin) => origin.trim().replace(/\/+$/, ''))
+  .filter(Boolean);
+
+const isLocalOrigin = (origin) =>
+  process.env.NODE_ENV !== 'production' &&
+  /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin || '');
+
+const isSameOrigin = (req, origin) => {
+  try {
+    return new URL(origin).host === req.headers.host;
+  } catch {
+    return false;
+  }
+};
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  const crossOriginTrusted =
+    Boolean(origin) &&
+    !isSameOrigin(req, origin) &&
+    (ALLOWED_ORIGINS.includes(origin.replace(/\/+$/, '')) || isLocalOrigin(origin));
+
+  if (crossOriginTrusted) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+    res.setHeader('Access-Control-Max-Age', '600');
+    res.setHeader('Vary', 'Origin');
+  }
+
+  if (req.method === 'OPTIONS') return res.status(204).end();
+
+  const safeMethod = req.method === 'GET' || req.method === 'HEAD';
+  if (origin && !safeMethod && !crossOriginTrusted && !isSameOrigin(req, origin)) {
+    return res.status(403).json({ error: 'Origin not allowed.' });
+  }
+
+  return next();
+});
+
 // Generated demo artwork (original SVGs, cached for a week).
 app.get('/api/img/:kind/:seed', artworkRoute);
 

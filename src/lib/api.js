@@ -1,5 +1,8 @@
 /** Typed-ish fetch helpers for the ZYREX API. */
-const BASE = '/api';
+// The client can be hosted separately from the API (for example on GitHub Pages),
+// so the API origin is configurable at build time. Same-origin is the default.
+const API_ORIGIN = (import.meta.env.VITE_API_BASE || '').replace(/\/+$/, '');
+const BASE = `${API_ORIGIN}/api`;
 
 async function request(path, { method = 'GET', body, headers = {} } = {}) {
   const opts = { method, credentials: 'include', headers: { ...headers } };
@@ -58,9 +61,10 @@ export function qs(params) {
   return s ? `?${s}` : '';
 }
 
-/** Resolve an API image path against the current origin. */
+/** Resolve an API image path against the API origin (or the current origin). */
 export const imageUrl = (src) => {
-  if (!src) return '/api/img/product/zyrex.svg?glyph=box&label=ZYREX&hue=250';
+  if (!src) return imageUrl('/api/img/product/zyrex.svg?glyph=box&label=ZYREX&hue=250');
   if (src.startsWith('http') || src.startsWith('data:')) return src;
+  if (src.startsWith('/api/')) return `${API_ORIGIN}${src}`;
   return src;
 };
