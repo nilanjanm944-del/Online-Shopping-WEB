@@ -198,6 +198,26 @@ bind causes a 502.
 the same environment; Supabase needs its URL and keys; transactional email needs a
 provider. Deploying the frontend does not provision those accounts.
 
+### GitHub Pages (static preview of the storefront)
+
+The repository publishes the React storefront to GitHub Pages so the pages can be
+viewed at a public `github.io` address. GitHub Pages cannot run Node, so the Pages
+build calls this project's live API for catalogue, auth, cart and orders.
+
+- Workflow: `.github/workflows/pages.yml` (builds on push to `main` or `appjet`).
+- Build inputs: `VITE_BASE_PATH=/Online-Shopping-WEB/` (Pages serves a sub-path) and
+  `VITE_API_BASE=https://vulesrkzir.dev.onappjet.com` (the API origin).
+- Deep links: the workflow copies `dist/index.html` to `dist/404.html` so a refresh on
+  `/shop` or `/product/...` still loads the app.
+- Server side: `CORS_ORIGINS` lists the allowed web origins (comma separated, defaults
+  to `https://nilanjanm944-del.github.io`). Cross-site requests get `SameSite=None`
+  session cookies, which browsers only accept over HTTPS.
+
+One-time owner step: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+After the workflow finishes, the site is at
+`https://nilanjanm944-del.github.io/Online-Shopping-WEB/`. If you rename the repository,
+update `VITE_BASE_PATH` in the workflow to match.
+
 ## 14. Testing
 
 ```bash
