@@ -79,13 +79,15 @@
   }
 }
 
+/* `btn` is a real utility so the variant classes below can @apply it (Tailwind v4 rule). */
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition
+    disabled:cursor-not-allowed disabled:opacity-60;
+}
+
 @layer components {
   .shell {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
-  }
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition
-      disabled:cursor-not-allowed disabled:opacity-60;
   }
   .btn-primary {
     @apply btn bg-brand-600 text-white shadow-sm hover:bg-brand-700 active:scale-[0.99];
