@@ -90,7 +90,7 @@ const ADDRESS = {
   full_name: 'Test Customer',
   phone: '9876543210',
   email: 'buyer@example.com',
-  address_line1: '42 Test Lane, Sector 5',
+  line1: '42 Test Lane, Sector 5',
   city: 'Bengaluru',
   state: 'Karnataka',
   pincode: '560001',
@@ -256,8 +256,14 @@ async function run() {
     check('GET /api/orders lists the order', orders.some((o) => o.id === order.data?.order?.id));
 
     const orderNumber = order.data?.order?.order_number;
-    const tracking = await request(`/api/track/${orderNumber}`);
-    check('GET /api/track/:orderNumber returns a timeline', tracking.status === 200 && Array.isArray(tracking.data?.order?.timeline));
+    const tracking = await request(`/api/track/${orderNumber}`, { cookie: customer });
+    check('GET /api/track/:orderNumber returns a timeline', tracking.status === 200 && Array.isArray(tracking.data?.order?.timeline), `status ${tracking.status}`);
+
+    const guestTrack = await request(`/api/track/${orderNumber}?email=${encodeURIComponent(ADDRESS.email)}`);
+    check('guest can track with the order email', guestTrack.status === 200, `status ${guestTrack.status}`);
+
+    const strangerTrack = await request(`/api/track/${orderNumber}?email=someone-else@example.com`);
+    check('tracking rejects a wrong email', strangerTrack.status === 403, `status ${strangerTrack.status}`);
 
     const badAddress = await request('/api/orders', {
       method: 'POST',
