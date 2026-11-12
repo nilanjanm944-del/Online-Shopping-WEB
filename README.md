@@ -169,7 +169,7 @@ Test-mode keys cannot capture real money.
 
 ## 10. Admin setup
 
-- Seed administrator: **admin@zyrexstore.in / Admin@12345** — change this password
+- Seed administrator: **admin@zyrexstore.com / Admin@12345** — change this password
   immediately in production (or set your own seed credentials before first start).
 - Admin sign-in: `/admin/login`, dashboard: `/admin`.
 - Promote another account to admin from Admin → Customers → Role.
