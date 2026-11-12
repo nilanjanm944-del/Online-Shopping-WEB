@@ -15,6 +15,7 @@ import {
   currentUser,
 } from '../auth.js';
 import { rateLimit } from '../lib/rate-limit.js';
+import { normalizeAddress, validateAddress } from '../lib/address.js';
 
 const router = express.Router();
 
@@ -139,23 +140,10 @@ router.post('/reset-password', rateLimit({ windowMs: 60_000, max: 10 }), (req, r
 
 /* ----------------------------- Addresses -------------------------------- */
 
-const ADDRESS_FIELDS = ['name', 'phone', 'line1', 'line2', 'city', 'state', 'pincode', 'landmark', 'instructions'];
+/** Accepts both `full_name`/`name` and `line1`/`address_line1` spellings. */
+const cleanAddress = (body) => normalizeAddress(body);
 
-function cleanAddress(body) {
-  const out = {};
-  for (const f of ADDRESS_FIELDS) out[f] = String(body?.[f] ?? '').trim();
-  return out;
-}
-
-export function validateAddress(a) {
-  if (!a.name || a.name.length < 2) return 'Please enter the recipient name.';
-  if (!/^[0-9+\-\s()]{8,16}$/.test(a.phone)) return 'Please enter a valid mobile number.';
-  if (!a.line1 || a.line1.length < 6) return 'Please enter the delivery address.';
-  if (!a.city) return 'Please enter your city.';
-  if (!a.state) return 'Please enter your state.';
-  if (!/^[1-9][0-9]{5}$/.test(a.pincode)) return 'Please enter a valid 6-digit PIN code.';
-  return null;
-}
+export { validateAddress };
 
 router.get('/addresses', requireAuth, (req, res) => {
   res.json({ addresses: filter('addresses', (a) => a.user_id === req.auth.id) });
