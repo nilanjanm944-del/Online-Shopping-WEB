@@ -121,3 +121,10 @@ online payment is disabled with an explicit message, and no fake success is show
 4. Loyalty points, referrals and membership tiers (tables already present).
 5. Complete the Bengali translation set.
 6. Order invoices as downloadable PDFs.
+
+## Deployment record
+
+- Live URL: https://vulesrkzir.dev.onappjet.com (AppJet hosting, port 80, Node 26 Alpine image)
+- Build: build-1794469165435-83c11520 — build completed, image security scan passed (98 packages, 0 blocking findings)
+- Verified live: `/`, `/shop`, `/categories`, `/cart`, `/blog`, `/admin/login`, `/help` at 1280px and 390px (HTTP 200, no page/asset errors); `/api/health`, `/api/categories`, `/api/products` return 200 and unknown endpoints return JSON 404.
+- Startup fix worth remembering: `server/data/catalogue.js` was excluded by the `data/` rule in `.gitignore`, so the deployed image crashed with ERR_MODULE_NOT_FOUND. The catalogue source now lives at `server/catalogue-data.js` (tracked by Git). Never place required source files under a Git-ignored path.
