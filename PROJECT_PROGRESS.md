@@ -128,3 +128,22 @@ online payment is disabled with an explicit message, and no fake success is show
 - Build: build-1794469165435-83c11520 — build completed, image security scan passed (98 packages, 0 blocking findings)
 - Verified live: `/`, `/shop`, `/categories`, `/cart`, `/blog`, `/admin/login`, `/help` at 1280px and 390px (HTTP 200, no page/asset errors); `/api/health`, `/api/categories`, `/api/products` return 200 and unknown endpoints return JSON 404.
 - Startup fix worth remembering: `server/data/catalogue.js` was excluded by the `data/` rule in `.gitignore`, so the deployed image crashed with ERR_MODULE_NOT_FOUND. The catalogue source now lives at `server/catalogue-data.js` (tracked by Git). Never place required source files under a Git-ignored path.
+
+## GitHub Pages publishing
+
+- Workflow `.github/workflows/pages.yml` builds the React storefront with
+  `VITE_BASE_PATH=/Online-Shopping-WEB/` and `VITE_API_BASE=https://vulesrkzir.dev.onappjet.com`,
+  copies `index.html` to `404.html` so deep links survive a refresh, then deploys with
+  `actions/deploy-pages`. It runs on pushes to `main` or `appjet` and on manual dispatch.
+- Client changes: `vite.config.js` base path from `VITE_BASE_PATH`, `BrowserRouter basename`,
+  API base and `imageUrl()` from `VITE_API_BASE`, `%BASE_URL%` asset links, `public/sw.js`
+  offline shell, `public/favicon.svg`, `public/manifest.webmanifest`.
+- Server changes: `CORS_ORIGINS` allowlist (comma separated) with credentials,
+  `SameSite=None; Secure` session cookies for cross-site callers, and state-changing
+  requests from an unexpected origin rejected with 403.
+- Verified locally: Pages-style build succeeds (`/Online-Shopping-WEB/assets/...`), API suite
+  50/50, and CORS behaviour confirmed on a local production-mode server — allowed origin gets
+  `Access-Control-Allow-Origin` + credentials, preflight returns 204, a disallowed origin gets
+  403, same-origin calls pass through.
+- Owner step: Settings -> Pages -> Source: GitHub Actions. Pages serves static files only, so
+  auth writes, cart sync, payments and admin actions still run on the AppJet deployment.
