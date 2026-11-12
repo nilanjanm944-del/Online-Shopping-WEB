@@ -1,0 +1,32 @@
+{
+  "name": "zyrex-store",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "ZYREX STORE - multi-category online shopping marketplace (React + Express + Tailwind)",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "node server/index.js",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "test": "node scripts/test-api.mjs",
+    "test:api": "node scripts/test-api.mjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.9.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@vitejs/plugin-react": "^6.3.0",
+    "tailwindcss": "^4.3.5",
+    "vite": "^8.3.8"
+  }
+}
