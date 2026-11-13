@@ -1038,5 +1038,29 @@
     "landing": "https://n2t.net/ark:/65665/ng49ca746a1-2eb4-704b-e053-15f76fa0b4fa",
     "provider": "smithsonian",
     "term": "Baby Care toy children"
+  },
+  "Anti-Colic Feeding Bottle Set": {
+    "missing": true,
+    "term": "Feeding Accessories toy children"
+  },
+  "Musical Rattle and Teether Set": {
+    "path": "/catalogue/musical-rattle-and-teether-set.jpg",
+    "source": "https://live.staticflickr.com/65535/52184332002_3613e6304d_b.jpg",
+    "title": "Putting buttons on baby toys such as the bottom red part of Kids II Discovery Pal rainbow caterpillar plush toys MUST BE BANNED",
+    "creator": "PatrickRich",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/91689877@N03/52184332002",
+    "provider": "flickr",
+    "term": "Baby Toys toy children"
+  },
+  "Water Resistant School Bag 30L": {
+    "path": "/catalogue/water-resistant-school-bag-30l.jpg",
+    "source": "https://live.staticflickr.com/65535/51347588545_57db024140_b.jpg",
+    "title": "20210729-RD-LSC-0100",
+    "creator": "USDAgov",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/41284017@N08/51347588545",
+    "provider": "flickr",
+    "term": "School Bags toy children"
   }
 }

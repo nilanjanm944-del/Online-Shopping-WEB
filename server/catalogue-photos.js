@@ -89,5 +89,7 @@ export const PHOTOS = {
   "Family Strategy Board Game": "/catalogue/family-strategy-board-game.jpg",
   "Soft Body Doll with Accessories": "/catalogue/soft-body-doll-with-accessories.jpg",
   "Cotton Baby Clothing Set of 5": "/catalogue/cotton-baby-clothing-set-of-5.jpg",
-  "Baby Gentle Wash and Lotion Combo": "/catalogue/baby-gentle-wash-and-lotion-combo.jpg"
+  "Baby Gentle Wash and Lotion Combo": "/catalogue/baby-gentle-wash-and-lotion-combo.jpg",
+  "Musical Rattle and Teether Set": "/catalogue/musical-rattle-and-teether-set.jpg",
+  "Water Resistant School Bag 30L": "/catalogue/water-resistant-school-bag-30l.jpg"
 };

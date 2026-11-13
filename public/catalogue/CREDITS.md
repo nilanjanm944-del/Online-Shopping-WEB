@@ -73,3 +73,21 @@ downloaded from Openverse and stored locally in this folder.
 | Dry-Fit Sports Jersey Set | mahsle7 | pdm | flickr | [source](https://www.flickr.com/photos/195746505@N07/52113220577) |
 | Match Football with Pump | U.S. Department of Defense | cc0 | rawpixel | [source](https://www.rawpixel.com/image/3315625/free-photo-image-football-america-cc0) |
 | Carbon Shaft Badminton Racket | Unknown | cc0 | svgsilh | [source](https://svgsilh.com/ms/image/308952.html) |
+| Adjustable Dumbbell Set 20kg | mahsle7 | pdm | flickr | [source](https://www.flickr.com/photos/195746505@N07/52113220577) |
+| Resistance Band Set of 5 | Baillie, James S. | cc0 | smithsonian | [source](https://n2t.net/ark:/65665/ng49ca746a1-3599-704b-e053-15f76fa0b4fa) |
+| Gym Duffel Bag 40L | Baillie, James S. | cc0 | smithsonian | [source](https://n2t.net/ark:/65665/ng49ca746a1-3599-704b-e053-15f76fa0b4fa) |
+| Foldable Motorised Treadmill | U.S. Army Europe | pdm | flickr | [source](https://www.flickr.com/photos/37585279@N03/5664786032) |
+| Engineering Mechanics Textbook | Internet Archive Book Images | cc0 | wikimedia | [source](https://commons.wikimedia.org/w/index.php?curid=167098885) |
+| A5 Ruled Notebooks (Pack of 6) | Unknown | cc0 | rawpixel | [source](https://www.rawpixel.com/image/6436681/png-sticker-book) |
+| Gel Pen Set (Pack of 10) | Unknown | cc0 | rawpixel | [source](https://www.rawpixel.com/image/5921534/photo-image-book-public-domain-pen) |
+| Drawing Pencil Set with Sharpener | GeorgeTan#2...INACTIVE NOW | pdm | flickr | [source](https://www.flickr.com/photos/171425013@N02/48060100343) |
+| Desk Organiser and Stationery Kit | unclibraries_commons | pdm | flickr | [source](https://www.flickr.com/photos/122654055@N06/23098547855) |
+| Acrylic Colour Set 24 Shades | Unknown | cc0 | rawpixel | [source](https://www.rawpixel.com/image/6333215/image-paper-book-public-domain) |
+| Complete School Stationery Combo | Unknown | cc0 | rawpixel | [source](https://www.rawpixel.com/image/6436496/png-sticker-book) |
+| STEM Building Blocks 200 Pieces | U.S. Army Europe | pdm | flickr | [source](https://www.flickr.com/photos/37585279@N03/15786071896) |
+| Family Strategy Board Game | PatrickRich | pdm | flickr | [source](https://www.flickr.com/photos/91689877@N03/52448838157) |
+| Soft Body Doll with Accessories | Aussie~mobs | pdm | flickr | [source](https://www.flickr.com/photos/70994841@N07/21758602834) |
+| Cotton Baby Clothing Set of 5 | Helen Hyde, born Lima, NY 1868-died Pasadena, CA 1919 | cc0 | smithsonian | [source](https://americanart.si.edu/collections/search/artwork/?id=32807) |
+| Baby Gentle Wash and Lotion Combo | Kelloggs & Comstock | cc0 | smithsonian | [source](https://n2t.net/ark:/65665/ng49ca746a1-2eb4-704b-e053-15f76fa0b4fa) |
+| Musical Rattle and Teether Set | PatrickRich | pdm | flickr | [source](https://www.flickr.com/photos/91689877@N03/52184332002) |
+| Water Resistant School Bag 30L | USDAgov | pdm | flickr | [source](https://www.flickr.com/photos/41284017@N08/51347588545) |
