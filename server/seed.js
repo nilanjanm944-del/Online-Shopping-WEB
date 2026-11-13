@@ -339,7 +339,7 @@ export function seedDatabase(db) {
     { code: 'WELCOME10', description: '10% off your first order above ₹999 (max ₹200 off)', type: 'percent', value: 10, min_order: 999, max_discount: 200, campaign: 'New User Offer', active: true },
     { code: 'NEWUSER15', description: '15% off for new customers above ₹1,499 (max ₹400 off)', type: 'percent', value: 15, min_order: 1499, max_discount: 400, campaign: 'First Order Coupon', active: true },
     { code: 'FESTIVE500', description: 'Flat ₹500 off on orders above ₹2,999', type: 'flat', value: 500, min_order: 2999, max_discount: 500, campaign: 'Festival Discount', active: true },
-    { code: 'DIWALI25', description: '25% Diwali Sale discount above ₹1,999 (max ₹1,500 off)', type: 'percent', value: 25, min_order: 1999, max_discount: 1500, campaign: 'Diwali Sale', active: true },
+    { code: 'DIWALI26', description: '25% Diwali Sale discount above ₹1,999 (max ₹1,500 off)', type: 'percent', value: 25, min_order: 1999, max_discount: 1500, campaign: 'Diwali Sale', active: true },
     { code: 'DURGA20', description: '20% Durga Puja Sale discount above ₹1,499 (max ₹1,000 off)', type: 'percent', value: 20, min_order: 1499, max_discount: 1000, campaign: 'Durga Puja Sale', active: true },
     { code: 'SUMMER20', description: '20% Summer Sale discount above ₹1,299', type: 'percent', value: 20, min_order: 1299, max_discount: 900, campaign: 'Summer Sale', active: true },
     { code: 'MONSOON15', description: '15% Monsoon Sale discount above ₹999', type: 'percent', value: 15, min_order: 999, max_discount: 700, campaign: 'Monsoon Sale', active: true },
@@ -424,7 +424,7 @@ export function seedDatabase(db) {
     brand: {
       name: 'ZYREX STORE',
       tagline: 'Everything you need, in one premium marketplace',
-      announcement: 'Festive Sale is live — up to 55% off across fashion, electronics and home. Use code DIWALI25.',
+      announcement: 'Festive Sale is live — up to 55% off across fashion, electronics and home. Use code DIWALI26.',
       support_email: 'support@zyrexstore.com',
       support_phone: '+91 90000 00000',
       support_hours: 'Mon–Sat, 9:00 AM – 8:00 PM IST',

@@ -754,7 +754,7 @@ function CouponsTab({ notify }) {
       <section className={PANEL}>
         <h2 className="font-display text-base font-semibold">New coupon</h2>
         <form onSubmit={create} className="mt-2 space-y-2.5">
-          <Field label="Code" required><Input value={form.code} onChange={(e) => setForm({ ...form, code: e.target.value.toUpperCase() })} placeholder="DIWALI25" required /></Field>
+          <Field label="Code" required><Input value={form.code} onChange={(e) => setForm({ ...form, code: e.target.value.toUpperCase() })} placeholder="DIWALI26" required /></Field>
           <Field label="Description"><Input value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} /></Field>
           <Field label="Type">
             <select className="w-full rounded-xl border border-ink-300 bg-white px-3 py-2 text-sm dark:border-ink-700 dark:bg-ink-950" value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })}>

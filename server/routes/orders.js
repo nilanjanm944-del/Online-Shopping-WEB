@@ -23,6 +23,7 @@ import {
   fetchPayment,
   razorpayConfigured,
   razorpayPublicConfig,
+  sandboxPaymentsEnabled,
   verifyPaymentSignature,
 } from '../payments.js';
 import { rateLimit } from '../lib/rate-limit.js';
@@ -103,6 +104,7 @@ function resolveItems(userId, body) {
 router.get('/payments/config', (_req, res) => {
   res.json({
     razorpay: razorpayPublicConfig(),
+    sandbox: { enabled: sandboxPaymentsEnabled(), mode: 'test' },
     cod_enabled: commerceConfig().cod_enabled,
     cod_limit: commerceConfig().cod_limit,
     currency: commerceConfig().currency,
@@ -150,11 +152,16 @@ router.post('/orders', requireAuth, rateLimit({ windowMs: 60_000, max: 20 }), (r
   const shipping = freeShip || subtotal >= cfg.free_shipping_threshold ? 0 : cfg.shipping_fee;
   const total = Math.max(0, subtotal - discount) + shipping;
 
-  const method = body.payment_method === 'cod' ? 'cod' : 'razorpay';
+  const requested = String(body.payment_method || '').toLowerCase();
+  const method = requested === 'cod' ? 'cod' : requested === 'sandbox' ? 'sandbox' : 'razorpay';
   if (method === 'cod') {
     if (!cfg.cod_enabled) return res.status(400).json({ error: 'Cash on Delivery is not available.' });
     if (total > cfg.cod_limit) {
       return res.status(400).json({ error: `Cash on Delivery is available up to ₹${cfg.cod_limit}.` });
+    }
+  } else if (method === 'sandbox') {
+    if (!sandboxPaymentsEnabled()) {
+      return res.status(503).json({ error: 'Test payments are disabled on this store.', code: 'sandbox_disabled' });
     }
   } else if (!razorpayConfigured()) {
     return res.status(503).json({
@@ -176,7 +183,8 @@ router.post('/orders', requireAuth, rateLimit({ windowMs: 60_000, max: 20 }), (r
     savings: mrpTotal - subtotal + discount,
     coupon_code: coupon ? coupon.code : null,
     payment_method: method,
-    payment_status: method === 'cod' ? 'cod_pending' : 'awaiting_payment',
+    payment_gateway: method === 'cod' ? 'cod' : method === 'sandbox' ? 'sandbox' : 'razorpay',
+    payment_status: method === 'cod' ? 'cod_pending' : method === 'sandbox' ? 'test_pending' : 'awaiting_payment',
     status: 'Order Placed',
     address,
     notes: String(body.notes || '').slice(0, 500),
@@ -186,7 +194,9 @@ router.post('/orders', requireAuth, rateLimit({ windowMs: 60_000, max: 20 }), (r
         note:
           method === 'cod'
             ? 'Order placed with Cash on Delivery.'
-            : 'Order placed. Waiting for payment confirmation.',
+            : method === 'sandbox'
+              ? 'Order placed with test-mode payment. No money is charged.'
+              : 'Order placed. Waiting for payment confirmation.',
         at: nowIso(),
       },
     ],
@@ -369,6 +379,57 @@ router.post('/payments/razorpay/failed', requireAuth, (req, res) => {
   });
   persist();
   res.json({ ok: true, order: updated });
+});
+
+/* ------------------------ Test-mode (sandbox) payment ----------------------- */
+
+router.post('/payments/sandbox/confirm', requireAuth, rateLimit({ windowMs: 60_000, max: 30 }), (req, res) => {
+  if (!sandboxPaymentsEnabled()) {
+    return res.status(503).json({ error: 'Test payments are disabled on this store.', code: 'sandbox_disabled' });
+  }
+  const order = find('orders', (o) => o.id === req.body?.order_id && o.user_id === req.auth.id);
+  if (!order) return res.status(404).json({ error: 'Order not found.' });
+  if (order.payment_method !== 'sandbox') {
+    return res.status(400).json({ error: 'This order is not a test-payment order.' });
+  }
+  // Idempotent: a retried confirmation never double-processes an order.
+  if (order.payment_status === 'paid') return res.json({ ok: true, order, duplicate: true });
+  if (order.status === 'Cancelled') {
+    return res.status(409).json({ error: 'This order was cancelled and cannot be paid.' });
+  }
+
+  const outcome = req.body?.outcome === 'failure' ? 'failure' : 'success';
+  if (outcome === 'failure') {
+    restoreStock(order.items);
+    const failed = update('orders', order.id, {
+      payment_status: 'failed',
+      status: 'Cancelled',
+      cancel_reason: 'Test payment declined',
+      timeline: pushTimeline(
+        order,
+        'Cancelled',
+        'Test-mode payment declined. No money was charged and stock was released.'
+      ),
+    });
+    persist();
+    return res.json({ ok: true, outcome: 'failure', order: failed });
+  }
+
+  const reference = `TESTPAY-${Date.now().toString(36).toUpperCase()}${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
+  const updated = update('orders', order.id, {
+    payment_gateway: 'sandbox',
+    payment_status: 'paid',
+    status: 'Payment Confirmed',
+    sandbox_reference: reference,
+    paid_at: nowIso(),
+    timeline: pushTimeline(
+      order,
+      'Payment Confirmed',
+      `Test-mode payment ${reference} approved. No money was charged.`
+    ),
+  });
+  persist();
+  res.json({ ok: true, outcome: 'success', order: updated, reference });
 });
 
 /* ------------------------- Admin order endpoints ------------------------- */

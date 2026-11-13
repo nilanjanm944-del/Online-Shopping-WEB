@@ -16,6 +16,17 @@ const WEBHOOK_SECRET = process.env.RAZORPAY_WEBHOOK_SECRET || '';
 
 export const razorpayConfigured = () => Boolean(KEY_ID && KEY_SECRET);
 
+/**
+ * Test-mode payments.
+ *
+ * When a real gateway is not connected the store can still exercise the full
+ * order → payment → confirmation lifecycle with a simulated capture. The UI and
+ * the order record label it as a test payment (`payment_gateway: 'sandbox'`), no
+ * card data is collected and no money moves, so test orders are never confused
+ * with real revenue. Set PAYMENTS_SANDBOX=false to switch the simulator off.
+ */
+export const sandboxPaymentsEnabled = () => String(process.env.PAYMENTS_SANDBOX || 'true') !== 'false';
+
 export const razorpayPublicConfig = () => ({
   configured: razorpayConfigured(),
   key_id: KEY_ID ? KEY_ID : '',
