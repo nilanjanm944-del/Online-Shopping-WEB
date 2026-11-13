@@ -5,12 +5,14 @@
  * with variants/specs/stock, reviews, coupons, blog & vlog posts, support FAQs,
  * an administrator account and a demo customer.
  *
- * All products are clearly demo records with demo prices. Images are original
- * generated artwork served from /api/img (see server/images.js) — no third-party
- * or copyrighted photography is bundled with this project.
+ * All products are clearly demo records with demo prices. Product imagery is real
+ * CC0 / public-domain photography bundled under public/catalogue (see
+ * scripts/fetch-photos.mjs and public/catalogue/CREDITS.md); products without a
+ * licensed photo fall back to original generated artwork from /api/img.
  */
 import bcrypt from 'bcryptjs';
 import { DEPARTMENTS, SPEC_TEMPLATES } from './catalogue-data.js';
+import { PHOTOS } from './catalogue-photos.js';
 import { newId } from './store.js';
 
 const slugify = (s) =>
