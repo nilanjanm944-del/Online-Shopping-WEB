@@ -12,6 +12,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { queueUpsert, queueDelete, flushSupabase } from './supabase.js';
 
 const DATA_DIR = path.resolve(process.env.DATA_DIR || './data');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
@@ -80,6 +81,8 @@ export function persistNow() {
   } catch (err) {
     console.error('[store] write failed:', err.message);
   }
+  // Mirror mutations into Supabase when it is configured and reachable.
+  flushSupabase().catch((err) => console.error('[store] supabase flush failed:', err.message));
 }
 
 /** Debounced persistence — API handlers can mutate freely. */
@@ -101,6 +104,7 @@ export const table = (name) => {
 export function insert(name, doc) {
   const row = { id: doc.id || newId(), created_at: new Date().toISOString(), ...doc };
   table(name).push(row);
+  queueUpsert(name, row);
   persist();
   return row;
 }
@@ -110,18 +114,27 @@ export function update(name, id, patch) {
   const idx = rows.findIndex((r) => r.id === id);
   if (idx === -1) return null;
   rows[idx] = { ...rows[idx], ...patch, updated_at: new Date().toISOString() };
+  queueUpsert(name, rows[idx]);
   persist();
   return rows[idx];
 }
 
 export function remove(name, predicate) {
   const rows = table(name);
+  const dropped = rows.filter(predicate);
   const kept = rows.filter((r) => !predicate(r));
   const removed = rows.length - kept.length;
   const d = getDb();
   d[name] = kept;
+  for (const row of dropped) queueDelete(name, row.id);
   persist();
   return removed;
+}
+
+/** Replace a whole collection — used when hydrating from Supabase at boot. */
+export function replaceCollection(name, rows) {
+  const d = getDb();
+  d[name] = Array.isArray(rows) ? rows : [];
 }
 
 export function find(name, predicate) {

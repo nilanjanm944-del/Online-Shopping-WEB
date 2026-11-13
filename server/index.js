@@ -9,7 +9,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
-import { loadDb } from './store.js';
+import { loadDb, COLLECTIONS, replaceCollection } from './store.js';
+import { initSupabase, storageStatus } from './supabase.js';
 import { seedDatabase } from './seed.js';
 import { runMigrations } from './migrations.js';
 import { artworkRoute } from './images.js';
@@ -28,6 +29,12 @@ const PORT = Number(process.env.PORT) || 3000;
 // Initialise the datastore (seeds the demo catalogue on first boot).
 loadDb(seedDatabase);
 runMigrations();
+
+// When Supabase is configured and reachable, its documents replace the seeded
+// ones and later mutations are mirrored back to Postgres. Unreachable or
+// unauthorised projects fall back to the file store with a reported reason.
+const storage = await initSupabase(COLLECTIONS, replaceCollection);
+console.log(`[storage] backend=${storage.backend} ${storage.supabase.detail || ''}`.trim());
 
 const app = express();
 app.disable('x-powered-by');
@@ -100,8 +107,17 @@ const uploadsDir = path.resolve(process.env.DATA_DIR || path.join(ROOT, 'data'),
 app.use('/api/uploads', express.static(uploadsDir, { maxAge: '7d', fallthrough: true }));
 
 app.get('/api/health', (_req, res) =>
-  res.json({ ok: true, service: 'zyrex-store', time: new Date().toISOString(), uptime: Math.round(process.uptime()) })
+  res.json({
+    ok: true,
+    service: 'zyrex-store',
+    time: new Date().toISOString(),
+    uptime: Math.round(process.uptime()),
+    storage: storageStatus().backend,
+  })
 );
+
+// Truthful storage diagnostics: which backend is serving data, and why.
+app.get('/api/system/storage', (_req, res) => res.json(storageStatus()));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
