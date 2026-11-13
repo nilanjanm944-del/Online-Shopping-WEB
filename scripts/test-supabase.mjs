@@ -53,8 +53,9 @@ const server = http.createServer(async (req, res) => {
   }
 
   if (req.method === 'POST') {
-    const payload = JSON.parse((await readBody(req)) || '[]');
-    for (const row of payload) rows.set(`${row.collection}:${row.id}`, row);
+    const parsed = JSON.parse((await readBody(req)) || '[]');
+    const list = Array.isArray(parsed) ? parsed : [parsed];
+    for (const row of list) rows.set(`${row.collection}:${row.id}`, row);
     return send(201);
   }
 
