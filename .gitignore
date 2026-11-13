@@ -9,3 +9,6 @@ npm-debug.log*
 .DS_Store
 .vite/
 coverage/
+
+# build-time env presence report (generated, never committed)
+build-env.json

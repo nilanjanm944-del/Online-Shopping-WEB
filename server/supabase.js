@@ -15,6 +15,8 @@
  * and is never sent to the browser or committed to Git.
  */
 
+import { runtimeEnvPresence, buildEnvSnapshot } from './env-report.js';
+
 const RAW_URL = (process.env.SUPABASE_URL || '').trim().replace(/\/+$/, '');
 const SERVICE_KEY = (process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY || '').trim();
 const ANON_KEY = (process.env.SUPABASE_ANON_KEY || '').trim();
@@ -72,6 +74,12 @@ async function request(path, init = {}) {
 export function storageStatus() {
   return {
     backend: state.backend,
+    // Presence-only diagnostics: distinguishes "variable missing" from
+    // "variable never reaches this stage". No values are exposed.
+    env: {
+      runtime: runtimeEnvPresence(),
+      build: buildEnvSnapshot(),
+    },
     supabase: {
       configured: state.configured,
       projectHost: state.projectHost,

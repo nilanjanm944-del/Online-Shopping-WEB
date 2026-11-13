@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vite",
     "dev:api": "node server/index.js",
+    "prebuild": "node scripts/capture-build-env.mjs",
     "build": "vite build",
     "start": "node server/index.js",
     "test": "node scripts/test-api.mjs",
