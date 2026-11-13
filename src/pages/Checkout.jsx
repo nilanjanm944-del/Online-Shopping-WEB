@@ -228,6 +228,8 @@ export default function Checkout() {
   };
 
   const field = (key) => ({
+    id: `co-${key}`,
+    name: key,
     value: form[key],
     onChange: (e) => setForm({ ...form, [key]: e.target.value }),
   });
