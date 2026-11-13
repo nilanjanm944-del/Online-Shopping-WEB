@@ -589,5 +589,270 @@
   "Triply Stainless Steel Cookware Set": {
     "path": "/catalogue/triply-stainless-steel-cookware-set.jpg",
     "adopted": true
+  },
+  "Modular Kitchen Tool Organiser": {
+    "path": "/catalogue/modular-kitchen-tool-organiser.jpg",
+    "adopted": true
+  },
+  "Ceramic Dinner Set (18 Pieces)": {
+    "missing": true,
+    "term": "Dining Products kitchen home appliance"
+  },
+  "Sheesham Wood 3-Seater Sofa": {
+    "path": "/catalogue/sheesham-wood-3-seater-sofa.jpg",
+    "adopted": true
+  },
+  "Handcrafted Wall Art Panel": {
+    "path": "/catalogue/handcrafted-wall-art-panel.jpg",
+    "adopted": true
+  },
+  "Warm White Pendant Light": {
+    "path": "/catalogue/warm-white-pendant-light.jpg",
+    "adopted": true
+  },
+  "Stackable Wardrobe Organiser": {
+    "missing": true,
+    "term": "Storage Products kitchen home appliance"
+  },
+  "King Size Cotton Bedsheet Set": {
+    "missing": true,
+    "term": "Bedsheets kitchen home appliance"
+  },
+  "Blackout Door Curtains (Set of 2)": {
+    "path": "/catalogue/blackout-door-curtains-set-of-2.jpg",
+    "adopted": true
+  },
+  "Aged Basmati Rice 5kg": {
+    "missing": true,
+    "term": "Rice grocery food product"
+  },
+  "Toor Dal 2kg": {
+    "missing": true,
+    "term": "Pulses grocery food product"
+  },
+  "Whole Wheat Atta 10kg": {
+    "missing": true,
+    "term": "Flour grocery food product"
+  },
+  "Refined Sunflower Oil 5L": {
+    "missing": true,
+    "term": "Cooking Oil grocery food product"
+  },
+  "Garam Masala and Turmeric Combo": {
+    "missing": true,
+    "term": "Spices grocery food product"
+  },
+  "Refined Sugar 5kg": {
+    "missing": true,
+    "term": "Sugar grocery food product"
+  },
+  "Iodised Salt 1kg (Pack of 2)": {
+    "missing": true,
+    "term": "Salt grocery food product"
+  },
+  "Assorted Namkeen Pack of 6": {
+    "path": "/catalogue/assorted-namkeen-pack-of-6.jpg",
+    "adopted": true
+  },
+  "Butter Cookies Family Pack": {
+    "path": "/catalogue/butter-cookies-family-pack.jpg",
+    "adopted": true
+  },
+  "Dark Chocolate Assortment 300g": {
+    "missing": true,
+    "term": "Chocolates grocery food product"
+  },
+  "Mixed Fruit Juice 1L (Pack of 4)": {
+    "missing": true,
+    "term": "Beverages grocery food product"
+  },
+  "Premium Assam Tea 1kg": {
+    "missing": true,
+    "term": "Tea grocery food product"
+  },
+  "Instant Coffee Powder 200g": {
+    "path": "/catalogue/instant-coffee-powder-200g.jpg",
+    "source": "https://live.staticflickr.com/1753/41708074635_08f9046f78_b.jpg",
+    "title": "Abandoned Grocery Store with Retro Gas Pumps",
+    "creator": "Brett Streutker",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/148686664@N06/41708074635",
+    "provider": "flickr",
+    "term": "Coffee grocery food product"
+  },
+  "UHT Toned Milk 1L (Pack of 6)": {
+    "path": "/catalogue/uht-toned-milk-1l-pack-of-6.jpg",
+    "source": "https://live.staticflickr.com/8361/28705196460_f83af7b4f4_b.jpg",
+    "title": "20160802-RD-LSC-0586",
+    "creator": "USDAgov",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/41284017@N08/28705196460",
+    "provider": "flickr",
+    "term": "Dairy Products grocery food product"
+  },
+  "Whole Wheat Bread Loaf": {
+    "path": "/catalogue/whole-wheat-bread-loaf.jpg",
+    "source": "https://live.staticflickr.com/65535/54674569903_a3bbaa585f_b.jpg",
+    "title": "20110715-USDA-OC-PSD-0017",
+    "creator": "USDAgov",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/41284017@N08/54674569903",
+    "provider": "flickr",
+    "term": "Bakery Products grocery food product"
+  },
+  "Seasonal Fresh Fruit Basket 3kg": {
+    "path": "/catalogue/seasonal-fresh-fruit-basket-3kg.jpg",
+    "source": "https://live.staticflickr.com/7266/7413967872_34820fbfa2_b.jpg",
+    "title": "20120105-OC-AMW-0486",
+    "creator": "USDAgov",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/41284017@N08/7413967872",
+    "provider": "flickr",
+    "term": "Fruits grocery food product"
+  },
+  "Farm Fresh Vegetable Combo 5kg": {
+    "path": "/catalogue/farm-fresh-vegetable-combo-5kg.jpg",
+    "source": "https://live.staticflickr.com/8008/7413968580_ef7c4bc654_b.jpg",
+    "title": "20120105-OC-AMW-0484",
+    "creator": "USDAgov",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/41284017@N08/7413968580",
+    "provider": "flickr",
+    "term": "Vegetables grocery food product"
+  },
+  "Ready-to-Cook Meal Combo": {
+    "path": "/catalogue/ready-to-cook-meal-combo.jpg",
+    "source": "https://live.staticflickr.com/65535/55161159664_20f8904e7c_b.jpg",
+    "title": "Schulze & Burch Biscuit Company",
+    "creator": "Bycroft Boy",
+    "license": "cc0",
+    "landing": "https://www.flickr.com/photos/105277968@N08/55161159664",
+    "provider": "flickr",
+    "term": "Packaged Foods grocery food product"
+  },
+  "Bath Soap and Handwash Combo": {
+    "missing": true,
+    "term": "Personal Care grocery food product"
+  },
+  "Floor Cleaner 2L with Dishwash Gel": {
+    "missing": true,
+    "term": "Household Cleaning grocery food product"
+  },
+  "Vitamin C Brightening Serum 30ml": {
+    "path": "/catalogue/vitamin-c-brightening-serum-30ml.jpg",
+    "source": "https://live.staticflickr.com/5736/21850218808_aa2524899c_b.jpg",
+    "title": "Pineapple and gtapefruit juice, the best cosmetic, ever Promise! #pineapple #grapefruit #juice #juicer #smoothie #cosmetic #cosmetics #beauty #skincare #fitness #health #vitamins #eatclean #enjoy",
+    "creator": "Christos Pontikis",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/92854661@N07/21850218808",
+    "provider": "flickr",
+    "term": "Skincare cosmetics skincare beauty"
+  },
+  "Argan Repair Hair Mask 200g": {
+    "missing": true,
+    "term": "Haircare cosmetics skincare beauty",
+    "error": "image responded 404"
+  },
+  "Shea Butter Body Lotion 400ml": {
+    "path": "/catalogue/shea-butter-body-lotion-400ml.jpg",
+    "source": "https://cdn.stocksnap.io/img-thumbs/960w/LRSAT4NCLS.jpg",
+    "title": "Beauty Skincare",
+    "creator": "Authentic Stock",
+    "license": "cc0",
+    "landing": "https://stocksnap.io/photo/beauty-skincare-LRSAT4NCLS",
+    "provider": "stocksnap",
+    "term": "Body Care cosmetics skincare beauty"
+  },
+  "Gentle Foaming Face Wash 150ml": {
+    "missing": true,
+    "term": "Face Wash cosmetics skincare beauty"
+  },
+  "Ceramide Daily Moisturiser 100ml": {
+    "missing": true,
+    "term": "Moisturizers cosmetics skincare beauty"
+  },
+  "SPF 50 PA+++ Matte Sunscreen 50ml": {
+    "missing": true,
+    "term": "Sunscreen cosmetics skincare beauty"
+  },
+  "Sulphate-Free Repair Shampoo 340ml": {
+    "missing": true,
+    "term": "Shampoo cosmetics skincare beauty"
+  },
+  "Hydrating Conditioner 250ml": {
+    "missing": true,
+    "term": "Conditioner cosmetics skincare beauty"
+  },
+  "Matte Liquid Lipstick Set of 4": {
+    "path": "/catalogue/matte-liquid-lipstick-set-of-4.jpg",
+    "source": "https://cdn.stocksnap.io/img-thumbs/960w/GZAJOCOQCW.jpg",
+    "title": "Cosmetics Care",
+    "creator": "Authentic Stock",
+    "license": "cc0",
+    "landing": "https://stocksnap.io/photo/cosmetics-care-GZAJOCOQCW",
+    "provider": "stocksnap",
+    "term": "Makeup cosmetics skincare beauty"
+  },
+  "Eau de Parfum 100ml": {
+    "path": "/catalogue/eau-de-parfum-100ml.jpg",
+    "source": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZyaHlnaWVuZV9jbGVhbmxpbmVzc19za2luY2FyZV84NzA3NjMtaW1hZ2Uta3oyZTQ4amguanBn.jpg",
+    "title": "Skincare bottles, Location unknown, Aug",
+    "creator": "Unknown",
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/6112549/skincare-bottles-location-unknown-aug-2015",
+    "provider": "rawpixel",
+    "term": "Perfumes cosmetics skincare beauty"
+  },
+  "Beard Trimmer and Grooming Kit": {
+    "missing": true,
+    "term": "Grooming Products cosmetics skincare beauty"
+  },
+  "Makeup Brush Set (12 Pieces)": {
+    "path": "/catalogue/makeup-brush-set-12-pieces.jpg",
+    "source": "https://cdn.stocksnap.io/img-thumbs/960w/I8SLDUOMYC.jpg",
+    "title": "Makeup Products",
+    "creator": "Beauty and Fashion",
+    "license": "cc0",
+    "landing": "https://stocksnap.io/photo/makeup-products-I8SLDUOMYC",
+    "provider": "stocksnap",
+    "term": "Beauty Accessories cosmetics skincare beauty"
+  },
+  "Dry-Fit Sports Jersey Set": {
+    "path": "/catalogue/dry-fit-sports-jersey-set.jpg",
+    "source": "https://live.staticflickr.com/65535/52113220577_1df4b6392a_b.jpg",
+    "title": "لياقة",
+    "creator": "mahsle7",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/195746505@N07/52113220577",
+    "provider": "flickr",
+    "term": "Sports Clothing fitness sports equipment"
+  },
+  "Cushioned Running Shoes": {
+    "missing": true,
+    "term": "Running Shoes fitness sports equipment"
+  },
+  "Kashmir Willow Cricket Kit": {
+    "missing": true,
+    "term": "Cricket Equipment fitness sports equipment"
+  },
+  "Match Football with Pump": {
+    "path": "/catalogue/match-football-with-pump.jpg",
+    "source": "https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwxMDA4MzA4NzM4NC1pbWFnZS1rcDJjOWxhdC1remVtZjIyZS5qcGc.jpg",
+    "title": "From left, U.S. Air Force",
+    "creator": "U.S. Department of Defense",
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/3315625/free-photo-image-football-america-cc0",
+    "provider": "rawpixel",
+    "term": "Football Equipment fitness sports equipment"
+  },
+  "Carbon Shaft Badminton Racket": {
+    "path": "/catalogue/carbon-shaft-badminton-racket.jpg",
+    "source": "https://svgsilh.com/png/308952.png",
+    "title": "perlawanan",
+    "creator": "Unknown",
+    "license": "cc0",
+    "landing": "https://svgsilh.com/ms/image/308952.html",
+    "provider": "svgsilh",
+    "term": "Badminton Equipment fitness sports equipment"
   }
 }

@@ -52,3 +52,24 @@ downloaded from Openverse and stored locally in this folder.
 | Convection Microwave Oven 28L | undefined | undefined | undefined | — |
 | Decorative Ceiling Fan 1200mm | undefined | undefined | undefined | — |
 | Triply Stainless Steel Cookware Set | undefined | undefined | undefined | — |
+| Modular Kitchen Tool Organiser | undefined | undefined | undefined | — |
+| Sheesham Wood 3-Seater Sofa | undefined | undefined | undefined | — |
+| Handcrafted Wall Art Panel | undefined | undefined | undefined | — |
+| Warm White Pendant Light | undefined | undefined | undefined | — |
+| Blackout Door Curtains (Set of 2) | undefined | undefined | undefined | — |
+| Assorted Namkeen Pack of 6 | undefined | undefined | undefined | — |
+| Butter Cookies Family Pack | undefined | undefined | undefined | — |
+| Instant Coffee Powder 200g | Brett Streutker | pdm | flickr | [source](https://www.flickr.com/photos/148686664@N06/41708074635) |
+| UHT Toned Milk 1L (Pack of 6) | USDAgov | pdm | flickr | [source](https://www.flickr.com/photos/41284017@N08/28705196460) |
+| Whole Wheat Bread Loaf | USDAgov | pdm | flickr | [source](https://www.flickr.com/photos/41284017@N08/54674569903) |
+| Seasonal Fresh Fruit Basket 3kg | USDAgov | pdm | flickr | [source](https://www.flickr.com/photos/41284017@N08/7413967872) |
+| Farm Fresh Vegetable Combo 5kg | USDAgov | pdm | flickr | [source](https://www.flickr.com/photos/41284017@N08/7413968580) |
+| Ready-to-Cook Meal Combo | Bycroft Boy | cc0 | flickr | [source](https://www.flickr.com/photos/105277968@N08/55161159664) |
+| Vitamin C Brightening Serum 30ml | Christos Pontikis | pdm | flickr | [source](https://www.flickr.com/photos/92854661@N07/21850218808) |
+| Shea Butter Body Lotion 400ml | Authentic Stock | cc0 | stocksnap | [source](https://stocksnap.io/photo/beauty-skincare-LRSAT4NCLS) |
+| Matte Liquid Lipstick Set of 4 | Authentic Stock | cc0 | stocksnap | [source](https://stocksnap.io/photo/cosmetics-care-GZAJOCOQCW) |
+| Eau de Parfum 100ml | Unknown | cc0 | rawpixel | [source](https://www.rawpixel.com/image/6112549/skincare-bottles-location-unknown-aug-2015) |
+| Makeup Brush Set (12 Pieces) | Beauty and Fashion | cc0 | stocksnap | [source](https://stocksnap.io/photo/makeup-products-I8SLDUOMYC) |
+| Dry-Fit Sports Jersey Set | mahsle7 | pdm | flickr | [source](https://www.flickr.com/photos/195746505@N07/52113220577) |
+| Match Football with Pump | U.S. Department of Defense | cc0 | rawpixel | [source](https://www.rawpixel.com/image/3315625/free-photo-image-football-america-cc0) |
+| Carbon Shaft Badminton Racket | Unknown | cc0 | svgsilh | [source](https://svgsilh.com/ms/image/308952.html) |
