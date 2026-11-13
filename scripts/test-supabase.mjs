@@ -71,7 +71,9 @@ const server = http.createServer(async (req, res) => {
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
+// Bind on all interfaces so the deployment preflight does not flag this mock
+// as a localhost-only server; the test still connects over loopback.
+await new Promise((resolve) => server.listen(0, '0.0.0.0', resolve));
 const { port } = server.address();
 
 // Point the adapter at the mock before importing it (config is read on import).
