@@ -154,6 +154,7 @@ export function setSetting(key, value) {
   const row = find('settings', (s) => s.key === key);
   if (row) {
     row.value = value;
+    queueUpsert('settings', row);
     persist();
     return row;
   }
