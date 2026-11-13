@@ -49,7 +49,9 @@ export default function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/compare" element={<Compare />} />
-                <Route path="/checkout" element={<RequireAuth><Checkout /></RequireAuth>} />
+                <Route element={<RequireAuth />}>
+                  <Route path="checkout" element={<Checkout />} />
+                </Route>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
