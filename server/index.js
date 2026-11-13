@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import express from 'express';
 import { loadDb } from './store.js';
 import { seedDatabase } from './seed.js';
+import { runMigrations } from './migrations.js';
 import { artworkRoute } from './images.js';
 import authRoutes from './routes/auth.js';
 import catalogueRoutes from './routes/catalogue.js';
@@ -26,6 +27,7 @@ const PORT = Number(process.env.PORT) || 3000;
 
 // Initialise the datastore (seeds the demo catalogue on first boot).
 loadDb(seedDatabase);
+runMigrations();
 
 const app = express();
 app.disable('x-powered-by');

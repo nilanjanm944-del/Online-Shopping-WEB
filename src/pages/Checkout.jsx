@@ -88,7 +88,10 @@ export default function Checkout() {
         const preferred = list.find((a) => a.is_default) || list[0];
         if (preferred) setSelectedAddress(preferred.id);
         setConfig(cfg);
-        if (!cfg.razorpay?.configured && cfg.cod_enabled) setMethod('cod');
+        if (!cfg.razorpay?.configured) {
+          if (cfg.sandbox?.enabled) setMethod('sandbox');
+          else if (cfg.cod_enabled) setMethod('cod');
+        }
       } catch (err) {
         if (alive) setError(err.message);
       } finally {
@@ -107,6 +110,7 @@ export default function Checkout() {
   const chosen = useMemo(() => addresses.find((a) => a.id === selectedAddress) || null, [addresses, selectedAddress]);
   const codAvailable = Boolean(config?.cod_enabled) && cart.total <= (config?.cod_limit || Infinity);
   const razorpayReady = Boolean(config?.razorpay?.configured);
+  const sandboxReady = Boolean(config?.sandbox?.enabled);
 
   if (loading) return <PageLoader label="Preparing checkout…" />;
 
@@ -153,6 +157,15 @@ export default function Checkout() {
       if (method === 'cod') {
         await refreshCart();
         notify('Order placed successfully');
+        navigate(`/account/orders/${order.id}`, { replace: true });
+        return;
+      }
+
+      // Test-mode payment: the server records the outcome and confirms the order.
+      if (method === 'sandbox') {
+        await api.post('/payments/sandbox/confirm', { order_id: order.id, outcome: 'success' });
+        await refreshCart();
+        notify('Test payment approved — order confirmed. No money was charged.');
         navigate(`/account/orders/${order.id}`, { replace: true });
         return;
       }
@@ -305,9 +318,9 @@ export default function Checkout() {
 
             {!razorpayReady && (
               <p className="mt-3 rounded-xl bg-amber-50 px-3 py-2 text-xs text-amber-800 dark:bg-amber-900/20 dark:text-amber-300">
-                Online payment is not active yet. Add <code className="font-mono">RAZORPAY_KEY_ID</code> and{' '}
-                <code className="font-mono">RAZORPAY_KEY_SECRET</code> in Settings → Environment variables to enable
-                Razorpay test mode. Card, UPI and net banking run through the gateway — this store never sees them.
+                {sandboxReady
+                  ? 'Razorpay is not connected, so live card/UPI payments are off. Test-mode payment is available below: it completes the full order and payment flow so you can check the store, and no money is charged.'
+                  : 'Online payment is not active yet. Add RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET in Settings → Environment variables to enable Razorpay. Card, UPI and net banking run through the gateway — this store never sees them.'}
               </p>
             )}
 
@@ -331,6 +344,28 @@ export default function Checkout() {
                   </span>
                 </span>
               </label>
+
+              {sandboxReady && (
+                <label className={cx('flex cursor-pointer items-start gap-3 rounded-xl border p-3 text-sm', method === 'sandbox' ? 'border-brand-500 bg-brand-50/60 dark:bg-brand-900/20' : 'border-ink-200 dark:border-ink-700')}>
+                  <input
+                    type="radio"
+                    name="pay"
+                    className="mt-1"
+                    checked={method === 'sandbox'}
+                    onChange={() => setMethod('sandbox')}
+                  />
+                  <span>
+                    <span className="flex flex-wrap items-center gap-2 font-semibold">
+                      Test payment (no money charged)
+                      <Badge tone="warn">test mode</Badge>
+                    </span>
+                    <span className="block text-xs text-ink-600 dark:text-ink-300">
+                      Runs the complete payment flow — order, confirmation and timeline — so you can verify checkout
+                      before Razorpay is connected. No card details are collected.
+                    </span>
+                  </span>
+                </label>
+              )}
 
               <label className={cx('flex cursor-pointer items-start gap-3 rounded-xl border p-3 text-sm', method === 'cod' ? 'border-brand-500 bg-brand-50/60 dark:bg-brand-900/20' : 'border-ink-200 dark:border-ink-700', !codAvailable && 'opacity-60')}>
                 <input
@@ -408,8 +443,14 @@ export default function Checkout() {
               <p className="mt-3 rounded-xl bg-rose-50 px-3 py-2 text-xs font-medium text-rose-700 dark:bg-rose-900/20 dark:text-rose-300">{error}</p>
             )}
 
-            <Button className="mt-4 w-full" onClick={placeOrder} disabled={busy || (method === 'razorpay' && !razorpayReady) || (method === 'cod' && !codAvailable)}>
-              {busy ? 'Placing order…' : method === 'cod' ? `Place order · ${inr(cart.total)}` : `Pay ${inr(cart.total)} securely`}
+            <Button className="mt-4 w-full" onClick={placeOrder} disabled={busy || (method === 'razorpay' && !razorpayReady) || (method === 'cod' && !codAvailable) || (method === 'sandbox' && !sandboxReady)}>
+              {busy
+                ? 'Placing order…'
+                : method === 'cod'
+                  ? `Place order · ${inr(cart.total)}`
+                  : method === 'sandbox'
+                    ? `Pay ${inr(cart.total)} in test mode`
+                    : `Pay ${inr(cart.total)} securely`}
             </Button>
             <p className="mt-2 text-center text-[11px] text-ink-500 dark:text-ink-400">
               Prices and stock are re-checked on the server before the order is created.
