@@ -114,8 +114,9 @@ try {
     [...rows.values()].some((r) => r.payload?.name === 'Mirrored Item')
   );
 
-  // Non-UUID document ids (the settings row uses "site") must mirror too.
-  store.setSetting('brand', { name: 'ZYREX STORE' });
+  // The seeded settings row keeps the non-UUID id "site"; updating it must
+  // mirror too (a uuid column would reject this id, hence the text column).
+  store.setSetting('site', { brand: 'ZYREX STORE' });
   await wait(600);
   check('non-uuid settings id mirrored', rows.has('settings:site'));
 
