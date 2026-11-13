@@ -91,3 +91,9 @@ downloaded from Openverse and stored locally in this folder.
 | Baby Gentle Wash and Lotion Combo | Kelloggs & Comstock | cc0 | smithsonian | [source](https://n2t.net/ark:/65665/ng49ca746a1-2eb4-704b-e053-15f76fa0b4fa) |
 | Musical Rattle and Teether Set | PatrickRich | pdm | flickr | [source](https://www.flickr.com/photos/91689877@N03/52184332002) |
 | Water Resistant School Bag 30L | USDAgov | pdm | flickr | [source](https://www.flickr.com/photos/41284017@N08/51347588545) |
+| Car Interior Detailing Kit | unclibraries_commons | pdm | flickr | [source](https://www.flickr.com/photos/122654055@N06/23072128186) |
+| Adult Dog Dry Food 4kg | USDAgov | pdm | flickr | [source](https://www.flickr.com/photos/41284017@N08/7880844624) |
+| Indoor Cat Dry Food 2kg | Terry Kearney | cc0 | flickr | [source](https://www.flickr.com/photos/24490288@N04/38365115982) |
+| Chew Rope and Ball Toy Set | Wonderlane | cc0 | flickr | [source](https://www.flickr.com/photos/71401718@N00/3610374176) |
+| Adjustable Pet Harness and Leash | shop8447 | cc0 | flickr | [source](https://www.flickr.com/photos/185514373@N06/49061329017) |
+| Washable Pet Bed Medium | cogdogblog | cc0 | flickr | [source](https://www.flickr.com/photos/37996646802@N01/15613116756) |

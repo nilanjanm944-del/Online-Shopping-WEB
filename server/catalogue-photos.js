@@ -91,5 +91,11 @@ export const PHOTOS = {
   "Cotton Baby Clothing Set of 5": "/catalogue/cotton-baby-clothing-set-of-5.jpg",
   "Baby Gentle Wash and Lotion Combo": "/catalogue/baby-gentle-wash-and-lotion-combo.jpg",
   "Musical Rattle and Teether Set": "/catalogue/musical-rattle-and-teether-set.jpg",
-  "Water Resistant School Bag 30L": "/catalogue/water-resistant-school-bag-30l.jpg"
+  "Water Resistant School Bag 30L": "/catalogue/water-resistant-school-bag-30l.jpg",
+  "Car Interior Detailing Kit": "/catalogue/car-interior-detailing-kit.jpg",
+  "Adult Dog Dry Food 4kg": "/catalogue/adult-dog-dry-food-4kg.jpg",
+  "Indoor Cat Dry Food 2kg": "/catalogue/indoor-cat-dry-food-2kg.jpg",
+  "Chew Rope and Ball Toy Set": "/catalogue/chew-rope-and-ball-toy-set.jpg",
+  "Adjustable Pet Harness and Leash": "/catalogue/adjustable-pet-harness-and-leash.jpg",
+  "Washable Pet Bed Medium": "/catalogue/washable-pet-bed-medium.jpg"
 };
