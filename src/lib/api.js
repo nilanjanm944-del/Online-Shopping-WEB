@@ -65,6 +65,6 @@ export function qs(params) {
 export const imageUrl = (src) => {
   if (!src) return imageUrl('/api/img/product/zyrex.svg?glyph=box&label=ZYREX&hue=250');
   if (src.startsWith('http') || src.startsWith('data:')) return src;
-  if (src.startsWith('/api/')) return `${API_ORIGIN}${src}`;
+  if (src.startsWith('/api/') || src.startsWith('/catalogue/')) return `${API_ORIGIN}${src}`;
   return src;
 };

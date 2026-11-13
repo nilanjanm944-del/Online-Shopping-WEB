@@ -103,9 +103,13 @@ function buildProduct(dept, deptIndex, sub, noun, n) {
     petType: pick(PET_TYPES, seed),
   });
 
-  const images = [0, 1, 2].map(
-    (v) => `/api/img/product/${slug}.svg?v=${v}&glyph=${dept.glyph}&hue=${dept.hue}&label=${encodeURIComponent(brand)}`
-  );
+  // Real CC0 photography when available, generated artwork otherwise.
+  const photo = PHOTOS[name];
+  const images = photo
+    ? [photo]
+    : [0, 1, 2].map(
+        (v) => `/api/img/product/${slug}.svg?v=${v}&glyph=${dept.glyph}&hue=${dept.hue}&label=${encodeURIComponent(brand)}`
+      );
 
   const highlights = [
     `${sub.name} from the ${dept.name} collection`,

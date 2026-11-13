@@ -1,0 +1,195 @@
+#!/usr/bin/env node
+/**
+ * Fetch real, copyright-free product photography and store it locally.
+ *
+ * Source: Openverse (https://openverse.org) filtered to CC0 / public-domain works,
+ * which need no attribution and may be used commercially. Images are downloaded,
+ * cropped to a consistent 4:5 catalogue ratio and committed under
+ * `public/catalogue/`, so the storefront never hotlinks a third party and never
+ * shows a broken URL. Provenance is written to `public/catalogue/CREDITS.md`.
+ *
+ * Resumable and chunkable:
+ *   node scripts/fetch-photos.mjs --limit 40 --offset 0
+ *   node scripts/fetch-photos.mjs --limit 40 --offset 40
+ *   node scripts/fetch-photos.mjs --force          (re-download everything)
+ */
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { DEPARTMENTS } from '../server/catalogue-data.js';
+
+const run = promisify(execFile);
+const ROOT = process.cwd();
+const OUT_DIR = path.join(ROOT, 'public', 'catalogue');
+const STATE_FILE = path.join(OUT_DIR, 'photos.json');
+const MAP_FILE = path.join(ROOT, 'server', 'catalogue-photos.js');
+const CREDITS_FILE = path.join(OUT_DIR, 'CREDITS.md');
+const UA = 'ZYREX-STORE-demo/1.0 (catalogue photography; contact support@zyrexstore.com)';
+
+const args = process.argv.slice(2);
+const arg = (name, fallback) => {
+  const i = args.indexOf(`--${name}`);
+  return i >= 0 && args[i + 1] ? args[i + 1] : fallback;
+};
+const LIMIT = Number(arg('limit', 40));
+const OFFSET = Number(arg('offset', 0));
+const FORCE = args.includes('--force');
+
+/** Search hints keep Openverse results on-topic per department. */
+const HINTS = {
+  'fashion-clothing': 'clothing fashion apparel',
+  electronics: 'electronics gadget device',
+  'home-kitchen': 'kitchen home appliance',
+  grocery: 'grocery food product',
+  'beauty-personal-care': 'cosmetics skincare beauty',
+  'sports-fitness': 'fitness sports equipment',
+  'books-stationery': 'book stationery',
+  'toys-baby': 'toy children',
+  automotive: 'car automotive accessory',
+  'pet-supplies': 'pet dog cat',
+};
+
+const slugify = (s) =>
+  String(s)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 70);
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function search(term) {
+  const url = `https://api.openverse.org/v1/images/?q=${encodeURIComponent(term)}&license=cc0,pdm&mature=false&page_size=10`;
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json' } });
+    if (res.ok) return (await res.json()).results || [];
+    if (res.status === 429 || res.status >= 500) {
+      await sleep(2500 * (attempt + 1));
+      continue;
+    }
+    throw new Error(`Openverse responded ${res.status}`);
+  }
+  return [];
+}
+
+function usable(results) {
+  return results.filter((r) => {
+    if (!r?.url || !/^https?:/.test(r.url)) return false;
+    if (!/\.(jpe?g|png|webp)(\?|$)/i.test(r.url) && r.filetype && !['jpg', 'jpeg', 'png', 'webp'].includes(String(r.filetype).toLowerCase())) return false;
+    if (r.width && r.height && (r.width < 500 || r.height < 400)) return false;
+    return true;
+  });
+}
+
+async function download(remote, target) {
+  const res = await fetch(remote, { headers: { 'User-Agent': UA } });
+  if (!res.ok) throw new Error(`image responded ${res.status}`);
+  const buf = Buffer.from(await res.arrayBuffer());
+  if (buf.length < 6000) throw new Error('image too small');
+  const tmp = `${target}.src`;
+  await fs.writeFile(tmp, buf);
+  // Cover-crop to the catalogue's 4:5 ratio so cards and galleries line up.
+  await run('convert', [tmp, '-auto-orient', '-resize', '720x900^', '-gravity', 'center', '-extent', '720x900', '-quality', '82', '-strip', target]);
+  await fs.rm(tmp, { force: true });
+}
+
+async function main() {
+  await fs.mkdir(OUT_DIR, { recursive: true });
+  let state = {};
+  try {
+    state = JSON.parse(await fs.readFile(STATE_FILE, 'utf8'));
+  } catch {
+    state = {};
+  }
+  const credits = { ...state };
+
+  // Build the work list in catalogue order so chunks are stable.
+  const work = [];
+  for (const dept of DEPARTMENTS) {
+    for (const sub of dept.subs) {
+      (sub.nouns || []).forEach(([name], i) => {
+        work.push({ name, sub: sub.name, dept: dept.slug, indexInSub: i });
+      });
+    }
+  }
+
+  const slice = work.slice(OFFSET, OFFSET + LIMIT);
+  let done = 0;
+  let skipped = 0;
+  const usedUrls = new Set(Object.values(state).map((v) => v.source).filter(Boolean));
+
+  for (const item of slice) {
+    const key = item.name;
+    const file = path.join(OUT_DIR, `${slugify(key)}.jpg`);
+    if (!FORCE && state[key] && !state[key].missing) {
+      skipped += 1;
+      continue;
+    }
+    const term = `${item.sub} ${HINTS[item.dept] || ''}`.trim();
+    try {
+      const results = usable(await search(term));
+      const candidate = results.find((r) => !usedUrls.has(r.url)) || results[0];
+      if (!candidate) {
+        state[key] = { missing: true, term };
+        continue;
+      }
+      await download(candidate.url, file);
+      usedUrls.add(candidate.url);
+      state[key] = {
+        path: `/catalogue/${path.basename(file)}`,
+        source: candidate.url,
+        title: candidate.title || '',
+        creator: candidate.creator || 'Unknown',
+        license: candidate.license || 'cc0',
+        landing: candidate.foreign_landing_url || '',
+        provider: candidate.provider || candidate.source || '',
+        term,
+      };
+      credits[key] = state[key];
+      done += 1;
+      process.stdout.write(`✓ ${key}  (${term})\n`);
+    } catch (err) {
+      state[key] = { missing: true, term, error: err.message };
+      process.stdout.write(`✗ ${key}  ${err.message}\n`);
+    }
+    await sleep(180);
+  }
+
+  await fs.writeFile(STATE_FILE, `${JSON.stringify(state, null, 2)}\n`);
+
+  // Tracked map module consumed by the seeder (name → local image path).
+  const map = {};
+  for (const [name, value] of Object.entries(state)) {
+    if (value?.path) map[name] = value.path;
+  }
+  const moduleSource = `/**
+ * Generated by scripts/fetch-photos.mjs — do not edit by hand.
+ *
+ * Maps a catalogue product name to locally hosted, CC0 / public-domain
+ * photography under public/catalogue/. Regenerate with:
+ *   node scripts/fetch-photos.mjs --limit 40 --offset 0
+ */
+export const PHOTOS = ${JSON.stringify(map, null, 2)};
+`;
+  await fs.writeFile(MAP_FILE, moduleSource);
+
+  // Attribution / provenance record (CC0 needs none, but provenance is honest).
+  const rows = Object.entries(credits)
+    .filter(([, v]) => v?.path)
+    .map(
+      ([name, v]) =>
+        `| ${name} | ${v.creator} | ${v.license} | ${v.provider} | ${v.landing ? `[source](${v.landing})` : '—'} |`
+    );
+  await fs.writeFile(
+    CREDITS_FILE,
+    `# Product photography credits\n\nAll photographs below are CC0 / public domain (no attribution required, commercial use allowed),\ndownloaded from Openverse and stored locally in this folder.\n\n| Product | Creator | Licence | Provider | Source |\n| --- | --- | --- | --- | --- |\n${rows.join('\n')}\n`
+  );
+
+  process.stdout.write(`\ndownloaded ${done}, already present ${skipped}, mapped ${Object.keys(map).length}/${work.length}\n`);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
