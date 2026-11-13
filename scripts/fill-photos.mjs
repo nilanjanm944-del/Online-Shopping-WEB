@@ -45,7 +45,15 @@ async function main() {
     }
   }
 
+  // Pass 1: borrow from a sibling in the same subcategory.
   let filled = 0;
+  const copyFrom = async (name, donor) => {
+    const target = path.join(OUT_DIR, `${slugify(name)}.jpg`);
+    await fs.copyFile(path.join(ROOT, 'public', state[donor].path), target);
+    state[name] = { path: `/catalogue/${slugify(name)}.jpg`, borrowedFrom: donor };
+    filled += 1;
+  };
+
   for (const names of groups.values()) {
     const donors = names.filter((n) => state[n]?.path);
     if (!donors.length) continue;
@@ -54,14 +62,34 @@ async function main() {
       if (state[name]?.path) continue;
       const donor = donors[turn % donors.length];
       turn += 1;
-      const target = path.join(OUT_DIR, `${slugify(name)}.jpg`);
       try {
-        await fs.copyFile(path.join(ROOT, 'public', state[donor].path), target);
-        state[name] = { path: `/catalogue/${slugify(name)}.jpg`, borrowedFrom: donor };
-        filled += 1;
+        await copyFrom(name, donor);
       } catch (err) {
         console.error(`✗ ${name}: ${err.message}`);
       }
+    }
+  }
+
+  // Pass 2: any remaining product borrows from its own department, then from the
+  // whole catalogue, so every product resolves to a local photograph.
+  const allDonors = Object.entries(state)
+    .filter(([, v]) => v?.path && !v.borrowedFrom)
+    .map(([n]) => n);
+  const deptOf = new Map();
+  for (const dept of DEPARTMENTS) {
+    for (const sub of dept.subs) for (const [name] of sub.nouns || []) deptOf.set(name, dept.slug);
+  }
+  let turn = 0;
+  for (const [name, dept] of deptOf) {
+    if (state[name]?.path) continue;
+    const sameDept = allDonors.filter((d) => deptOf.get(d) === dept);
+    const donor = sameDept[turn % Math.max(sameDept.length, 1)] || allDonors[turn % allDonors.length];
+    turn += 1;
+    if (!donor) continue;
+    try {
+      await copyFrom(name, donor);
+    } catch (err) {
+      console.error(`✗ ${name}: ${err.message}`);
     }
   }
 
