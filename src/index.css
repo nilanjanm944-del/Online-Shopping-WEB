@@ -156,3 +156,39 @@
     overflow: hidden;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Visual refinement layer — cleaner surfaces, calmer motion, sharper type.
+   --------------------------------------------------------------------------- */
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.011em;
+}
+
+/* Prices and counters align in columns instead of wobbling. */
+.tabular, .font-display { font-variant-numeric: tabular-nums; }
+
+/* Consistent, visible keyboard focus on every interactive element. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid rgb(79 70 229 / 0.55);
+  outline-offset: 2px;
+  border-radius: 0.6rem;
+}
+
+/* Photography sits on a neutral plate so crops look deliberate. */
+img { background-color: rgb(244 244 245); }
+
+/* Quieter scrollbars. */
+* { scrollbar-width: thin; scrollbar-color: rgb(161 161 170 / 0.5) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: rgb(161 161 170 / 0.45); border-radius: 999px; border: 3px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: rgb(113 113 122 / 0.6); background-clip: content-box; }
+
+/* Calmer, more consistent card lift. */
+@media (prefers-reduced-motion: no-preference) {
+  .group:hover img { transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1); }
+}

@@ -854,5 +854,189 @@
     "landing": "https://svgsilh.com/ms/image/308952.html",
     "provider": "svgsilh",
     "term": "Badminton Equipment fitness sports equipment"
+  },
+  "Adjustable Dumbbell Set 20kg": {
+    "path": "/catalogue/adjustable-dumbbell-set-20kg.jpg",
+    "source": "https://live.staticflickr.com/65535/52113220577_1df4b6392a_b.jpg",
+    "title": "لياقة",
+    "creator": "mahsle7",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/195746505@N07/52113220577",
+    "provider": "flickr",
+    "term": "Gym Accessories fitness sports equipment"
+  },
+  "Anti-Slip TPE Yoga Mat 6mm": {
+    "missing": true,
+    "term": "Yoga Mats fitness sports equipment"
+  },
+  "Resistance Band Set of 5": {
+    "path": "/catalogue/resistance-band-set-of-5.jpg",
+    "source": "https://ids.si.edu/ids/deliveryService?id=NMAH-2003-24905",
+    "title": "Single",
+    "creator": "Baillie, James S.",
+    "license": "cc0",
+    "landing": "https://n2t.net/ark:/65665/ng49ca746a1-3599-704b-e053-15f76fa0b4fa",
+    "provider": "smithsonian",
+    "term": "Fitness Accessories fitness sports equipment"
+  },
+  "Gym Duffel Bag 40L": {
+    "path": "/catalogue/gym-duffel-bag-40l.jpg",
+    "source": "https://ids.si.edu/ids/deliveryService?id=NMAH-2003-24905",
+    "title": "Single",
+    "creator": "Baillie, James S.",
+    "license": "cc0",
+    "landing": "https://n2t.net/ark:/65665/ng49ca746a1-3599-704b-e053-15f76fa0b4fa",
+    "provider": "smithsonian",
+    "term": "Sports Bags fitness sports equipment"
+  },
+  "Foldable Motorised Treadmill": {
+    "path": "/catalogue/foldable-motorised-treadmill.jpg",
+    "source": "https://live.staticflickr.com/5110/5664786032_5fa61fc254_b.jpg",
+    "title": "Mission Essential Fitness training",
+    "creator": "U.S. Army Europe",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/37585279@N03/5664786032",
+    "provider": "flickr",
+    "term": "Exercise Equipment fitness sports equipment"
+  },
+  "Class 10 Science Reference Set": {
+    "missing": true,
+    "term": "Academic Books book stationery"
+  },
+  "Engineering Mechanics Textbook": {
+    "path": "/catalogue/engineering-mechanics-textbook.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/6/68/Image_from_page_132_of_%22Railway_and_locomotive_engineering_-_a_practical_journal_of_railway_motive_power_and_rolling_stock%22_%281901%29.jpg",
+    "title": "Image from page 132 of 'Railway and locomotive engineering - a practical journal of railway motive power and rolling stock' (1901)",
+    "creator": "Internet Archive Book Images",
+    "license": "cc0",
+    "landing": "https://commons.wikimedia.org/w/index.php?curid=167098885",
+    "provider": "wikimedia",
+    "term": "Engineering Books book stationery"
+  },
+  "Data Structures and Algorithms Handbook": {
+    "missing": true,
+    "term": "Computer Science Books book stationery"
+  },
+  "The Last Monsoon (Paperback)": {
+    "missing": true,
+    "term": "Fiction book stationery"
+  },
+  "Mindful Productivity (Hardcover)": {
+    "missing": true,
+    "term": "Non-fiction book stationery"
+  },
+  "A5 Ruled Notebooks (Pack of 6)": {
+    "path": "/catalogue/a5-ruled-notebooks-pack-of-6.jpg",
+    "source": "https://images.rawpixel.com/image_png_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvam9iNjgzLTAwMTkucG5n.png",
+    "title": "Notebook png sticker, stationery illustration",
+    "creator": "Unknown",
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/6436681/png-sticker-book",
+    "provider": "rawpixel",
+    "term": "Notebooks book stationery"
+  },
+  "Gel Pen Set (Pack of 10)": {
+    "path": "/catalogue/gel-pen-set-pack-of-10.jpg",
+    "source": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg3MTQ1MjgtaW1hZ2Uta3d2eGl0cjAuanBn.jpg",
+    "title": "Free stationery closeup photo",
+    "creator": "Unknown",
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/5921534/photo-image-book-public-domain-pen",
+    "provider": "rawpixel",
+    "term": "Pens book stationery"
+  },
+  "Drawing Pencil Set with Sharpener": {
+    "path": "/catalogue/drawing-pencil-set-with-sharpener.jpg",
+    "source": "https://live.staticflickr.com/65535/48060100343_82bdbd2fd2_b.jpg",
+    "title": "pencil and book",
+    "creator": "GeorgeTan#2...INACTIVE NOW",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/171425013@N02/48060100343",
+    "provider": "flickr",
+    "term": "Pencils book stationery"
+  },
+  "Desk Organiser and Stationery Kit": {
+    "path": "/catalogue/desk-organiser-and-stationery-kit.jpg",
+    "source": "https://live.staticflickr.com/5809/23098547855_2a33c557af_b.jpg",
+    "title": "Alfred Williams &amp; Co., 119 Fayetteville Street, Raleigh, N. C.",
+    "creator": "unclibraries_commons",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/122654055@N06/23098547855",
+    "provider": "flickr",
+    "term": "Office Supplies book stationery"
+  },
+  "Acrylic Colour Set 24 Shades": {
+    "path": "/catalogue/acrylic-colour-set-24-shades.jpg",
+    "source": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvam9iNjgxLTAwMTAteC5qcGc.jpg",
+    "title": "Agenda notebook illustration",
+    "creator": "Unknown",
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/6333215/image-paper-book-public-domain",
+    "provider": "rawpixel",
+    "term": "Art Supplies book stationery"
+  },
+  "Complete School Stationery Combo": {
+    "path": "/catalogue/complete-school-stationery-combo.jpg",
+    "source": "https://images.rawpixel.com/image_png_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvam9iNjgzLTAwMzIucG5n.png",
+    "title": "Stacked books png sticker, stationery",
+    "creator": "Unknown",
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/6436496/png-sticker-book",
+    "provider": "rawpixel",
+    "term": "School Supplies book stationery"
+  },
+  "STEM Building Blocks 200 Pieces": {
+    "path": "/catalogue/stem-building-blocks-200-pieces.jpg",
+    "source": "https://live.staticflickr.com/7484/15786071896_4e8b75a200_b.jpg",
+    "title": "Meet the kids",
+    "creator": "U.S. Army Europe",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/37585279@N03/15786071896",
+    "provider": "flickr",
+    "term": "Educational Toys toy children"
+  },
+  "Die-Cast Action Figure Set": {
+    "missing": true,
+    "term": "Action Figures toy children"
+  },
+  "Family Strategy Board Game": {
+    "path": "/catalogue/family-strategy-board-game.jpg",
+    "source": "https://live.staticflickr.com/65535/52448838157_3dea4c9eb4_b.jpg",
+    "title": "The christmas special Arthur's Perfect Christmas MUST BE BANNED and never ever get revived in the future",
+    "creator": "PatrickRich",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/91689877@N03/52448838157",
+    "provider": "flickr",
+    "term": "Board Games toy children"
+  },
+  "Soft Body Doll with Accessories": {
+    "path": "/catalogue/soft-body-doll-with-accessories.jpg",
+    "source": "https://live.staticflickr.com/778/21758602834_11cc4d2e1f_b.jpg",
+    "title": "Australian WW1 patriotic postcard",
+    "creator": "Aussie~mobs",
+    "license": "pdm",
+    "landing": "https://www.flickr.com/photos/70994841@N07/21758602834",
+    "provider": "flickr",
+    "term": "Dolls toy children"
+  },
+  "Cotton Baby Clothing Set of 5": {
+    "path": "/catalogue/cotton-baby-clothing-set-of-5.jpg",
+    "source": "https://ids.si.edu/ids/deliveryService?id=SAAM-1992.13.57_1",
+    "title": "The Hired Baby",
+    "creator": "Helen Hyde, born Lima, NY 1868-died Pasadena, CA 1919",
+    "license": "cc0",
+    "landing": "https://americanart.si.edu/collections/search/artwork/?id=32807",
+    "provider": "smithsonian",
+    "term": "Baby Clothing toy children"
+  },
+  "Baby Gentle Wash and Lotion Combo": {
+    "path": "/catalogue/baby-gentle-wash-and-lotion-combo.jpg",
+    "source": "https://ids.si.edu/ids/deliveryService?id=NMAH-2003-24671-000001",
+    "title": "Married",
+    "creator": "Kelloggs & Comstock",
+    "license": "cc0",
+    "landing": "https://n2t.net/ark:/65665/ng49ca746a1-2eb4-704b-e053-15f76fa0b4fa",
+    "provider": "smithsonian",
+    "term": "Baby Care toy children"
   }
 }

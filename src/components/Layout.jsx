@@ -5,6 +5,7 @@ import { api } from '../lib/api';
 import { useStore } from '../context/StoreProvider';
 import { inr } from '../lib/format';
 import { Badge, Button, Input, SmartImage, cx } from './ui';
+import InstallApp from './InstallApp';
 
 const NAV = [
   { to: '/shop', label: 'Shop All' },
@@ -455,6 +456,7 @@ export default function Layout({ children }) {
       <Header brand={brand} />
       <main className="flex-1">{children}</main>
       <Footer brand={brand || settings?.brand || {}} />
+      <InstallApp />
     </div>
   );
 }

@@ -73,5 +73,21 @@ export const PHOTOS = {
   "Makeup Brush Set (12 Pieces)": "/catalogue/makeup-brush-set-12-pieces.jpg",
   "Dry-Fit Sports Jersey Set": "/catalogue/dry-fit-sports-jersey-set.jpg",
   "Match Football with Pump": "/catalogue/match-football-with-pump.jpg",
-  "Carbon Shaft Badminton Racket": "/catalogue/carbon-shaft-badminton-racket.jpg"
+  "Carbon Shaft Badminton Racket": "/catalogue/carbon-shaft-badminton-racket.jpg",
+  "Adjustable Dumbbell Set 20kg": "/catalogue/adjustable-dumbbell-set-20kg.jpg",
+  "Resistance Band Set of 5": "/catalogue/resistance-band-set-of-5.jpg",
+  "Gym Duffel Bag 40L": "/catalogue/gym-duffel-bag-40l.jpg",
+  "Foldable Motorised Treadmill": "/catalogue/foldable-motorised-treadmill.jpg",
+  "Engineering Mechanics Textbook": "/catalogue/engineering-mechanics-textbook.jpg",
+  "A5 Ruled Notebooks (Pack of 6)": "/catalogue/a5-ruled-notebooks-pack-of-6.jpg",
+  "Gel Pen Set (Pack of 10)": "/catalogue/gel-pen-set-pack-of-10.jpg",
+  "Drawing Pencil Set with Sharpener": "/catalogue/drawing-pencil-set-with-sharpener.jpg",
+  "Desk Organiser and Stationery Kit": "/catalogue/desk-organiser-and-stationery-kit.jpg",
+  "Acrylic Colour Set 24 Shades": "/catalogue/acrylic-colour-set-24-shades.jpg",
+  "Complete School Stationery Combo": "/catalogue/complete-school-stationery-combo.jpg",
+  "STEM Building Blocks 200 Pieces": "/catalogue/stem-building-blocks-200-pieces.jpg",
+  "Family Strategy Board Game": "/catalogue/family-strategy-board-game.jpg",
+  "Soft Body Doll with Accessories": "/catalogue/soft-body-doll-with-accessories.jpg",
+  "Cotton Baby Clothing Set of 5": "/catalogue/cotton-baby-clothing-set-of-5.jpg",
+  "Baby Gentle Wash and Lotion Combo": "/catalogue/baby-gentle-wash-and-lotion-combo.jpg"
 };
