@@ -46,5 +46,11 @@ export const PHOTOS = {
   "27-inch QHD IPS Monitor": "/catalogue/27-inch-qhd-ips-monitor.jpg",
   "ANC Over-Ear Headphones": "/catalogue/anc-over-ear-headphones.jpg",
   "Fitness Band with SpO2 Tracking": "/catalogue/fitness-band-with-spo2-tracking.jpg",
-  "Mirrorless Camera Kit 24MP": "/catalogue/mirrorless-camera-kit-24mp.jpg"
+  "Mirrorless Camera Kit 24MP": "/catalogue/mirrorless-camera-kit-24mp.jpg",
+  "65W GaN Fast Charger": "/catalogue/65w-gan-fast-charger.jpg",
+  "Braided USB-C Cable 2m": "/catalogue/braided-usb-c-cable-2m.jpg",
+  "Frost-Free 265L Double Door Refrigerator": "/catalogue/frost-free-265l-double-door-refrigerator.jpg",
+  "Convection Microwave Oven 28L": "/catalogue/convection-microwave-oven-28l.jpg",
+  "Decorative Ceiling Fan 1200mm": "/catalogue/decorative-ceiling-fan-1200mm.jpg",
+  "Triply Stainless Steel Cookware Set": "/catalogue/triply-stainless-steel-cookware-set.jpg"
 };

@@ -513,5 +513,81 @@
   "All-in-One Inkjet Printer": {
     "missing": true,
     "term": "Printers electronics gadget device"
+  },
+  "55-inch 4K Smart LED TV": {
+    "missing": true,
+    "term": "Televisions electronics gadget device"
+  },
+  "Smart Wi-Fi Bulb Pack (4 Units)": {
+    "missing": true,
+    "term": "Smart Home Devices electronics gadget device"
+  },
+  "20000mAh Fast Charge Power Bank": {
+    "missing": true,
+    "term": "Power Banks electronics gadget device"
+  },
+  "65W GaN Fast Charger": {
+    "path": "/catalogue/65w-gan-fast-charger.jpg",
+    "adopted": true
+  },
+  "Braided USB-C Cable 2m": {
+    "path": "/catalogue/braided-usb-c-cable-2m.jpg",
+    "adopted": true
+  },
+  "1TB NVMe Portable SSD": {
+    "missing": true,
+    "term": "Storage Devices electronics gadget device"
+  },
+  "Frost-Free 265L Double Door Refrigerator": {
+    "path": "/catalogue/frost-free-265l-double-door-refrigerator.jpg",
+    "adopted": true
+  },
+  "7kg Front Load Washing Machine": {
+    "missing": true,
+    "term": "Washing Machines kitchen home appliance"
+  },
+  "1.5 Ton 3-Star Inverter Split AC": {
+    "missing": true,
+    "term": "Air Conditioners kitchen home appliance"
+  },
+  "Personal Tower Air Cooler 25L": {
+    "missing": true,
+    "term": "Air Coolers kitchen home appliance"
+  },
+  "Convection Microwave Oven 28L": {
+    "path": "/catalogue/convection-microwave-oven-28l.jpg",
+    "adopted": true
+  },
+  "5.5L Digital Air Fryer": {
+    "missing": true,
+    "term": "Air Fryers kitchen home appliance"
+  },
+  "750W Mixer Grinder with 3 Jars": {
+    "missing": true,
+    "term": "Mixer Grinders kitchen home appliance"
+  },
+  "1.7L Stainless Steel Electric Kettle": {
+    "missing": true,
+    "term": "Electric Kettles kitchen home appliance"
+  },
+  "RO + UV Water Purifier 7L": {
+    "missing": true,
+    "term": "Water Purifiers kitchen home appliance"
+  },
+  "1200W Canister Vacuum Cleaner": {
+    "missing": true,
+    "term": "Vacuum Cleaners kitchen home appliance"
+  },
+  "Decorative Ceiling Fan 1200mm": {
+    "path": "/catalogue/decorative-ceiling-fan-1200mm.jpg",
+    "adopted": true
+  },
+  "2000W Fan Room Heater": {
+    "missing": true,
+    "term": "Room Heaters kitchen home appliance"
+  },
+  "Triply Stainless Steel Cookware Set": {
+    "path": "/catalogue/triply-stainless-steel-cookware-set.jpg",
+    "adopted": true
   }
 }

@@ -46,3 +46,9 @@ downloaded from Openverse and stored locally in this folder.
 | ANC Over-Ear Headphones | Burst | cc0 | stocksnap | [source](https://stocksnap.io/photo/wireless-headphones-EXCBJA3FFQ) |
 | Fitness Band with SpO2 Tracking | Design by Matt | cc0 | stocksnap | [source](https://stocksnap.io/photo/smart-watch-IVWZ4IZI5Q) |
 | Mirrorless Camera Kit 24MP | freestocks.org | cc0 | flickr | [source](https://www.flickr.com/photos/135396164@N05/24977037618) |
+| 65W GaN Fast Charger | undefined | undefined | undefined | — |
+| Braided USB-C Cable 2m | undefined | undefined | undefined | — |
+| Frost-Free 265L Double Door Refrigerator | undefined | undefined | undefined | — |
+| Convection Microwave Oven 28L | undefined | undefined | undefined | — |
+| Decorative Ceiling Fan 1200mm | undefined | undefined | undefined | — |
+| Triply Stainless Steel Cookware Set | undefined | undefined | undefined | — |
