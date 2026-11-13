@@ -18,10 +18,14 @@ export const dateTimeFmt = (value) =>
     ? new Date(value).toLocaleString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit' })
     : '—';
 
-export const deliveryDate = (days = 4) => {
-  const d = new Date();
-  d.setDate(d.getDate() + Number(days || 4));
-  return d.toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
+export const deliveryDate = (value, days = 4) => {
+  // Accept either a base date (e.g. an order's created_at) or a plain day count.
+  const isDayCount = typeof value === 'number' || (typeof value === 'string' && /^\d+$/.test(value.trim()));
+  const base = isDayCount ? new Date() : new Date(value || Date.now());
+  const span = isDayCount ? Number(value || days) : Number(days || 4);
+  if (Number.isNaN(base.getTime())) return deliveryDate(days);
+  base.setDate(base.getDate() + span);
+  return base.toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
 };
 
 export const discountOf = (mrp, price) => (mrp > price ? Math.round(((mrp - price) / mrp) * 100) : 0);
