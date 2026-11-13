@@ -5,7 +5,8 @@
  * seeded value in code is not enough — existing installs must be updated in
  * place. Every step here is idempotent, so repeated boots are safe.
  */
-import { find, update, persist } from './store.js';
+import { find, filter, update, persist } from './store.js';
+import { PHOTOS } from './catalogue-photos.js';
 
 export function runMigrations() {
   try {
@@ -21,6 +22,18 @@ export function runMigrations() {
     if (settings?.id && typeof settings.announcement === 'string' && settings.announcement.includes('DIWALI25')) {
       update('settings', settings.id, { announcement: settings.announcement.replaceAll('DIWALI25', 'DIWALI26') });
     }
+
+    // Real photography: products seeded before the photo catalogue existed still
+    // carry generated artwork, so swap in the local photograph by product name.
+    let reimaged = 0;
+    for (const product of filter('products', (p) => Boolean(PHOTOS[p.name]))) {
+      const photo = PHOTOS[product.name];
+      if (product.images?.[0] !== photo) {
+        update('products', product.id, { images: [photo] });
+        reimaged += 1;
+      }
+    }
+    if (reimaged) console.log(`[migrations] applied product photography to ${reimaged} products`);
 
     persist();
   } catch (err) {

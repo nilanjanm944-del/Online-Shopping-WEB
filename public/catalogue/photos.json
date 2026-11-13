@@ -40,8 +40,8 @@
     "term": "Casual Shirts clothing fashion apparel"
   },
   "Slim Fit Formal Cotton Shirt": {
-    "missing": true,
-    "term": "Formal Shirts clothing fashion apparel"
+    "path": "/catalogue/slim-fit-formal-cotton-shirt.jpg",
+    "borrowedFrom": "Essential Cotton Crew Neck T-Shirt"
   },
   "Stretch Slim Fit Denim Jeans": {
     "path": "/catalogue/stretch-slim-fit-denim-jeans.jpg",
@@ -54,8 +54,8 @@
     "term": "Jeans clothing fashion apparel"
   },
   "Tailored Formal Trousers": {
-    "missing": true,
-    "term": "Trousers clothing fashion apparel"
+    "path": "/catalogue/tailored-formal-trousers.jpg",
+    "borrowedFrom": "Oversized Drop-Shoulder T-Shirt"
   },
   "Everyday Cotton Chino Shorts": {
     "path": "/catalogue/everyday-cotton-chino-shorts.jpg",
@@ -108,8 +108,8 @@
     "term": "Blazers clothing fashion apparel"
   },
   "Silk Blend Kurta Pyjama Set": {
-    "missing": true,
-    "term": "Traditional Wear clothing fashion apparel"
+    "path": "/catalogue/silk-blend-kurta-pyjama-set.jpg",
+    "borrowedFrom": "Pique Cotton Polo T-Shirt"
   },
   "Dry-Fit Training Tracksuit": {
     "path": "/catalogue/dry-fit-training-tracksuit.jpg",
@@ -122,8 +122,8 @@
     "term": "Sportswear clothing fashion apparel"
   },
   "Cotton Vest and Brief Combo Pack": {
-    "missing": true,
-    "term": "Innerwear clothing fashion apparel"
+    "path": "/catalogue/cotton-vest-and-brief-combo-pack.jpg",
+    "borrowedFrom": "Relaxed Fit Check Casual Shirt"
   },
   "Ruffle Sleeve Casual Top": {
     "path": "/catalogue/ruffle-sleeve-casual-top.jpg",
@@ -166,8 +166,8 @@
     "term": "Jeans clothing fashion apparel"
   },
   "Pleated Wide Leg Trousers": {
-    "missing": true,
-    "term": "Trousers clothing fashion apparel"
+    "path": "/catalogue/pleated-wide-leg-trousers.jpg",
+    "borrowedFrom": "Stretch Slim Fit Denim Jeans"
   },
   "Ankle Length Cotton Leggings": {
     "path": "/catalogue/ankle-length-cotton-leggings.jpg",
@@ -180,12 +180,12 @@
     "term": "Leggings clothing fashion apparel"
   },
   "Printed A-Line Kurti": {
-    "missing": true,
-    "term": "Kurtis clothing fashion apparel"
+    "path": "/catalogue/printed-a-line-kurti.jpg",
+    "borrowedFrom": "Everyday Cotton Chino Shorts"
   },
   "Embroidered Straight Kurta": {
-    "missing": true,
-    "term": "Kurtas clothing fashion apparel"
+    "path": "/catalogue/embroidered-straight-kurta.jpg",
+    "borrowedFrom": "Fleece Pullover Hoodie"
   },
   "Banarasi Woven Silk Saree": {
     "path": "/catalogue/banarasi-woven-silk-saree.jpg",
@@ -198,12 +198,12 @@
     "term": "Sarees clothing fashion apparel"
   },
   "Chanderi Salwar Suit Set": {
-    "missing": true,
-    "term": "Salwar Suits clothing fashion apparel"
+    "path": "/catalogue/chanderi-salwar-suit-set.jpg",
+    "borrowedFrom": "Brushed Terry Sweatshirt"
   },
   "Anarkali Festive Gown Set": {
-    "missing": true,
-    "term": "Ethnic Wear clothing fashion apparel"
+    "path": "/catalogue/anarkali-festive-gown-set.jpg",
+    "borrowedFrom": "Quilted Bomber Jacket"
   },
   "Floral Midi Wrap Dress": {
     "path": "/catalogue/floral-midi-wrap-dress.jpg",
@@ -306,12 +306,12 @@
     "term": "School Clothing clothing fashion apparel"
   },
   "Kids Velcro Sneakers": {
-    "missing": true,
-    "term": "Kids' Footwear clothing fashion apparel"
+    "path": "/catalogue/kids-velcro-sneakers.jpg",
+    "borrowedFrom": "Slim Fit Party Blazer"
   },
   "Kids Cartoon Print Backpack": {
-    "missing": true,
-    "term": "Kids' Accessories clothing fashion apparel"
+    "path": "/catalogue/kids-cartoon-print-backpack.jpg",
+    "borrowedFrom": "Dry-Fit Training Tracksuit"
   },
   "Analog Chronograph Steel Watch": {
     "path": "/catalogue/analog-chronograph-steel-watch.jpg",
@@ -324,16 +324,16 @@
     "term": "Watches clothing fashion apparel"
   },
   "Structured Vegan Leather Handbag": {
-    "missing": true,
-    "term": "Handbags clothing fashion apparel"
+    "path": "/catalogue/structured-vegan-leather-handbag.jpg",
+    "borrowedFrom": "Ruffle Sleeve Casual Top"
   },
   "Laptop Backpack 32L": {
-    "missing": true,
-    "term": "Backpacks clothing fashion apparel"
+    "path": "/catalogue/laptop-backpack-32l.jpg",
+    "borrowedFrom": "Relaxed Fit Cotton T-Shirt"
   },
   "Bifold RFID Leather Wallet": {
-    "missing": true,
-    "term": "Wallets clothing fashion apparel"
+    "path": "/catalogue/bifold-rfid-leather-wallet.jpg",
+    "borrowedFrom": "Oversized Poplin Shirt"
   },
   "Full Grain Leather Belt": {
     "path": "/catalogue/full-grain-leather-belt.jpg",
@@ -356,12 +356,12 @@
     "term": "Sunglasses clothing fashion apparel"
   },
   "Oxidised Silver Necklace Set": {
-    "missing": true,
-    "term": "Jewellery clothing fashion apparel"
+    "path": "/catalogue/oxidised-silver-necklace-set.jpg",
+    "borrowedFrom": "High Rise Skinny Jeans"
   },
   "Adjustable Cotton Baseball Cap": {
-    "missing": true,
-    "term": "Caps clothing fashion apparel"
+    "path": "/catalogue/adjustable-cotton-baseball-cap.jpg",
+    "borrowedFrom": "Ankle Length Cotton Leggings"
   },
   "Oxford Leather Formal Shoes": {
     "path": "/catalogue/oxford-leather-formal-shoes.jpg",
@@ -374,8 +374,8 @@
     "term": "Shoes clothing fashion apparel"
   },
   "Comfort Cushion Sandals": {
-    "missing": true,
-    "term": "Sandals clothing fashion apparel"
+    "path": "/catalogue/comfort-cushion-sandals.jpg",
+    "borrowedFrom": "Banarasi Woven Silk Saree"
   },
   "Retro Court Sneakers": {
     "path": "/catalogue/retro-court-sneakers.jpg",
@@ -388,8 +388,8 @@
     "term": "Sneakers clothing fashion apparel"
   },
   "Derby Formal Shoes": {
-    "missing": true,
-    "term": "Formal Footwear clothing fashion apparel"
+    "path": "/catalogue/derby-formal-shoes.jpg",
+    "borrowedFrom": "Floral Midi Wrap Dress"
   },
   "Nova X9 5G Smartphone (8GB/128GB)": {
     "path": "/catalogue/nova-x9-5g-smartphone-8gb-128gb.jpg",
@@ -452,12 +452,12 @@
     "term": "Monitors electronics gadget device"
   },
   "Mechanical RGB Keyboard": {
-    "missing": true,
-    "term": "Keyboards electronics gadget device"
+    "path": "/catalogue/mechanical-rgb-keyboard.jpg",
+    "borrowedFrom": "Fitness Band with SpO2 Tracking"
   },
   "Wireless Ergonomic Mouse": {
-    "missing": true,
-    "term": "Mice electronics gadget device"
+    "path": "/catalogue/wireless-ergonomic-mouse.jpg",
+    "borrowedFrom": "Mirrorless Camera Kit 24MP"
   },
   "ANC Over-Ear Headphones": {
     "path": "/catalogue/anc-over-ear-headphones.jpg",
@@ -470,17 +470,16 @@
     "term": "Headphones electronics gadget device"
   },
   "TWS Earbuds with ENC Mic": {
-    "missing": true,
-    "term": "Earphones electronics gadget device",
-    "error": "image too small"
+    "path": "/catalogue/tws-earbuds-with-enc-mic.jpg",
+    "borrowedFrom": "65W GaN Fast Charger"
   },
   "Portable 20W Bluetooth Speaker": {
-    "missing": true,
-    "term": "Bluetooth Speakers electronics gadget device"
+    "path": "/catalogue/portable-20w-bluetooth-speaker.jpg",
+    "borrowedFrom": "Braided USB-C Cable 2m"
   },
   "AMOLED Smartwatch with GPS": {
-    "missing": true,
-    "term": "Smartwatches electronics gadget device"
+    "path": "/catalogue/amoled-smartwatch-with-gps.jpg",
+    "borrowedFrom": "Nova X9 5G Smartphone (8GB/128GB)"
   },
   "Fitness Band with SpO2 Tracking": {
     "path": "/catalogue/fitness-band-with-spo2-tracking.jpg",
@@ -503,28 +502,28 @@
     "term": "Cameras electronics gadget device"
   },
   "Wireless Gaming Controller": {
-    "missing": true,
-    "term": "Gaming Accessories electronics gadget device"
+    "path": "/catalogue/wireless-gaming-controller.jpg",
+    "borrowedFrom": "Rugged Keypad Feature Phone"
   },
   "USB-C 7-in-1 Hub": {
-    "missing": true,
-    "term": "Computer Accessories electronics gadget device"
+    "path": "/catalogue/usb-c-7-in-1-hub.jpg",
+    "borrowedFrom": "UltraBook 14 Laptop (16GB/512GB)"
   },
   "All-in-One Inkjet Printer": {
-    "missing": true,
-    "term": "Printers electronics gadget device"
+    "path": "/catalogue/all-in-one-inkjet-printer.jpg",
+    "borrowedFrom": "Creator Tower Desktop PC"
   },
   "55-inch 4K Smart LED TV": {
-    "missing": true,
-    "term": "Televisions electronics gadget device"
+    "path": "/catalogue/55-inch-4k-smart-led-tv.jpg",
+    "borrowedFrom": "Tab Air 11 Wi-Fi Tablet"
   },
   "Smart Wi-Fi Bulb Pack (4 Units)": {
-    "missing": true,
-    "term": "Smart Home Devices electronics gadget device"
+    "path": "/catalogue/smart-wi-fi-bulb-pack-4-units.jpg",
+    "borrowedFrom": "27-inch QHD IPS Monitor"
   },
   "20000mAh Fast Charge Power Bank": {
-    "missing": true,
-    "term": "Power Banks electronics gadget device"
+    "path": "/catalogue/20000mah-fast-charge-power-bank.jpg",
+    "borrowedFrom": "ANC Over-Ear Headphones"
   },
   "65W GaN Fast Charger": {
     "path": "/catalogue/65w-gan-fast-charger.jpg",
@@ -535,56 +534,56 @@
     "adopted": true
   },
   "1TB NVMe Portable SSD": {
-    "missing": true,
-    "term": "Storage Devices electronics gadget device"
+    "path": "/catalogue/1tb-nvme-portable-ssd.jpg",
+    "borrowedFrom": "Fitness Band with SpO2 Tracking"
   },
   "Frost-Free 265L Double Door Refrigerator": {
     "path": "/catalogue/frost-free-265l-double-door-refrigerator.jpg",
     "adopted": true
   },
   "7kg Front Load Washing Machine": {
-    "missing": true,
-    "term": "Washing Machines kitchen home appliance"
+    "path": "/catalogue/7kg-front-load-washing-machine.jpg",
+    "borrowedFrom": "Triply Stainless Steel Cookware Set"
   },
   "1.5 Ton 3-Star Inverter Split AC": {
-    "missing": true,
-    "term": "Air Conditioners kitchen home appliance"
+    "path": "/catalogue/1-5-ton-3-star-inverter-split-ac.jpg",
+    "borrowedFrom": "Modular Kitchen Tool Organiser"
   },
   "Personal Tower Air Cooler 25L": {
-    "missing": true,
-    "term": "Air Coolers kitchen home appliance"
+    "path": "/catalogue/personal-tower-air-cooler-25l.jpg",
+    "borrowedFrom": "Sheesham Wood 3-Seater Sofa"
   },
   "Convection Microwave Oven 28L": {
     "path": "/catalogue/convection-microwave-oven-28l.jpg",
     "adopted": true
   },
   "5.5L Digital Air Fryer": {
-    "missing": true,
-    "term": "Air Fryers kitchen home appliance"
+    "path": "/catalogue/5-5l-digital-air-fryer.jpg",
+    "borrowedFrom": "Handcrafted Wall Art Panel"
   },
   "750W Mixer Grinder with 3 Jars": {
-    "missing": true,
-    "term": "Mixer Grinders kitchen home appliance"
+    "path": "/catalogue/750w-mixer-grinder-with-3-jars.jpg",
+    "borrowedFrom": "Warm White Pendant Light"
   },
   "1.7L Stainless Steel Electric Kettle": {
-    "missing": true,
-    "term": "Electric Kettles kitchen home appliance"
+    "path": "/catalogue/1-7l-stainless-steel-electric-kettle.jpg",
+    "borrowedFrom": "Blackout Door Curtains (Set of 2)"
   },
   "RO + UV Water Purifier 7L": {
-    "missing": true,
-    "term": "Water Purifiers kitchen home appliance"
+    "path": "/catalogue/ro-uv-water-purifier-7l.jpg",
+    "borrowedFrom": "Frost-Free 265L Double Door Refrigerator"
   },
   "1200W Canister Vacuum Cleaner": {
-    "missing": true,
-    "term": "Vacuum Cleaners kitchen home appliance"
+    "path": "/catalogue/1200w-canister-vacuum-cleaner.jpg",
+    "borrowedFrom": "Convection Microwave Oven 28L"
   },
   "Decorative Ceiling Fan 1200mm": {
     "path": "/catalogue/decorative-ceiling-fan-1200mm.jpg",
     "adopted": true
   },
   "2000W Fan Room Heater": {
-    "missing": true,
-    "term": "Room Heaters kitchen home appliance"
+    "path": "/catalogue/2000w-fan-room-heater.jpg",
+    "borrowedFrom": "Decorative Ceiling Fan 1200mm"
   },
   "Triply Stainless Steel Cookware Set": {
     "path": "/catalogue/triply-stainless-steel-cookware-set.jpg",
@@ -595,8 +594,8 @@
     "adopted": true
   },
   "Ceramic Dinner Set (18 Pieces)": {
-    "missing": true,
-    "term": "Dining Products kitchen home appliance"
+    "path": "/catalogue/ceramic-dinner-set-18-pieces.jpg",
+    "borrowedFrom": "Triply Stainless Steel Cookware Set"
   },
   "Sheesham Wood 3-Seater Sofa": {
     "path": "/catalogue/sheesham-wood-3-seater-sofa.jpg",
@@ -611,44 +610,44 @@
     "adopted": true
   },
   "Stackable Wardrobe Organiser": {
-    "missing": true,
-    "term": "Storage Products kitchen home appliance"
+    "path": "/catalogue/stackable-wardrobe-organiser.jpg",
+    "borrowedFrom": "Modular Kitchen Tool Organiser"
   },
   "King Size Cotton Bedsheet Set": {
-    "missing": true,
-    "term": "Bedsheets kitchen home appliance"
+    "path": "/catalogue/king-size-cotton-bedsheet-set.jpg",
+    "borrowedFrom": "Sheesham Wood 3-Seater Sofa"
   },
   "Blackout Door Curtains (Set of 2)": {
     "path": "/catalogue/blackout-door-curtains-set-of-2.jpg",
     "adopted": true
   },
   "Aged Basmati Rice 5kg": {
-    "missing": true,
-    "term": "Rice grocery food product"
+    "path": "/catalogue/aged-basmati-rice-5kg.jpg",
+    "borrowedFrom": "Instant Coffee Powder 200g"
   },
   "Toor Dal 2kg": {
-    "missing": true,
-    "term": "Pulses grocery food product"
+    "path": "/catalogue/toor-dal-2kg.jpg",
+    "borrowedFrom": "UHT Toned Milk 1L (Pack of 6)"
   },
   "Whole Wheat Atta 10kg": {
-    "missing": true,
-    "term": "Flour grocery food product"
+    "path": "/catalogue/whole-wheat-atta-10kg.jpg",
+    "borrowedFrom": "Whole Wheat Bread Loaf"
   },
   "Refined Sunflower Oil 5L": {
-    "missing": true,
-    "term": "Cooking Oil grocery food product"
+    "path": "/catalogue/refined-sunflower-oil-5l.jpg",
+    "borrowedFrom": "Seasonal Fresh Fruit Basket 3kg"
   },
   "Garam Masala and Turmeric Combo": {
-    "missing": true,
-    "term": "Spices grocery food product"
+    "path": "/catalogue/garam-masala-and-turmeric-combo.jpg",
+    "borrowedFrom": "Farm Fresh Vegetable Combo 5kg"
   },
   "Refined Sugar 5kg": {
-    "missing": true,
-    "term": "Sugar grocery food product"
+    "path": "/catalogue/refined-sugar-5kg.jpg",
+    "borrowedFrom": "Ready-to-Cook Meal Combo"
   },
   "Iodised Salt 1kg (Pack of 2)": {
-    "missing": true,
-    "term": "Salt grocery food product"
+    "path": "/catalogue/iodised-salt-1kg-pack-of-2.jpg",
+    "borrowedFrom": "Assorted Namkeen Pack of 6"
   },
   "Assorted Namkeen Pack of 6": {
     "path": "/catalogue/assorted-namkeen-pack-of-6.jpg",
@@ -659,16 +658,16 @@
     "adopted": true
   },
   "Dark Chocolate Assortment 300g": {
-    "missing": true,
-    "term": "Chocolates grocery food product"
+    "path": "/catalogue/dark-chocolate-assortment-300g.jpg",
+    "borrowedFrom": "Butter Cookies Family Pack"
   },
   "Mixed Fruit Juice 1L (Pack of 4)": {
-    "missing": true,
-    "term": "Beverages grocery food product"
+    "path": "/catalogue/mixed-fruit-juice-1l-pack-of-4.jpg",
+    "borrowedFrom": "Instant Coffee Powder 200g"
   },
   "Premium Assam Tea 1kg": {
-    "missing": true,
-    "term": "Tea grocery food product"
+    "path": "/catalogue/premium-assam-tea-1kg.jpg",
+    "borrowedFrom": "UHT Toned Milk 1L (Pack of 6)"
   },
   "Instant Coffee Powder 200g": {
     "path": "/catalogue/instant-coffee-powder-200g.jpg",
@@ -731,12 +730,12 @@
     "term": "Packaged Foods grocery food product"
   },
   "Bath Soap and Handwash Combo": {
-    "missing": true,
-    "term": "Personal Care grocery food product"
+    "path": "/catalogue/bath-soap-and-handwash-combo.jpg",
+    "borrowedFrom": "Whole Wheat Bread Loaf"
   },
   "Floor Cleaner 2L with Dishwash Gel": {
-    "missing": true,
-    "term": "Household Cleaning grocery food product"
+    "path": "/catalogue/floor-cleaner-2l-with-dishwash-gel.jpg",
+    "borrowedFrom": "Seasonal Fresh Fruit Basket 3kg"
   },
   "Vitamin C Brightening Serum 30ml": {
     "path": "/catalogue/vitamin-c-brightening-serum-30ml.jpg",
@@ -749,9 +748,8 @@
     "term": "Skincare cosmetics skincare beauty"
   },
   "Argan Repair Hair Mask 200g": {
-    "missing": true,
-    "term": "Haircare cosmetics skincare beauty",
-    "error": "image responded 404"
+    "path": "/catalogue/argan-repair-hair-mask-200g.jpg",
+    "borrowedFrom": "Makeup Brush Set (12 Pieces)"
   },
   "Shea Butter Body Lotion 400ml": {
     "path": "/catalogue/shea-butter-body-lotion-400ml.jpg",
@@ -764,24 +762,24 @@
     "term": "Body Care cosmetics skincare beauty"
   },
   "Gentle Foaming Face Wash 150ml": {
-    "missing": true,
-    "term": "Face Wash cosmetics skincare beauty"
+    "path": "/catalogue/gentle-foaming-face-wash-150ml.jpg",
+    "borrowedFrom": "Vitamin C Brightening Serum 30ml"
   },
   "Ceramide Daily Moisturiser 100ml": {
-    "missing": true,
-    "term": "Moisturizers cosmetics skincare beauty"
+    "path": "/catalogue/ceramide-daily-moisturiser-100ml.jpg",
+    "borrowedFrom": "Shea Butter Body Lotion 400ml"
   },
   "SPF 50 PA+++ Matte Sunscreen 50ml": {
-    "missing": true,
-    "term": "Sunscreen cosmetics skincare beauty"
+    "path": "/catalogue/spf-50-pa-matte-sunscreen-50ml.jpg",
+    "borrowedFrom": "Matte Liquid Lipstick Set of 4"
   },
   "Sulphate-Free Repair Shampoo 340ml": {
-    "missing": true,
-    "term": "Shampoo cosmetics skincare beauty"
+    "path": "/catalogue/sulphate-free-repair-shampoo-340ml.jpg",
+    "borrowedFrom": "Eau de Parfum 100ml"
   },
   "Hydrating Conditioner 250ml": {
-    "missing": true,
-    "term": "Conditioner cosmetics skincare beauty"
+    "path": "/catalogue/hydrating-conditioner-250ml.jpg",
+    "borrowedFrom": "Makeup Brush Set (12 Pieces)"
   },
   "Matte Liquid Lipstick Set of 4": {
     "path": "/catalogue/matte-liquid-lipstick-set-of-4.jpg",
@@ -804,8 +802,8 @@
     "term": "Perfumes cosmetics skincare beauty"
   },
   "Beard Trimmer and Grooming Kit": {
-    "missing": true,
-    "term": "Grooming Products cosmetics skincare beauty"
+    "path": "/catalogue/beard-trimmer-and-grooming-kit.jpg",
+    "borrowedFrom": "Vitamin C Brightening Serum 30ml"
   },
   "Makeup Brush Set (12 Pieces)": {
     "path": "/catalogue/makeup-brush-set-12-pieces.jpg",
@@ -828,12 +826,12 @@
     "term": "Sports Clothing fitness sports equipment"
   },
   "Cushioned Running Shoes": {
-    "missing": true,
-    "term": "Running Shoes fitness sports equipment"
+    "path": "/catalogue/cushioned-running-shoes.jpg",
+    "borrowedFrom": "Gym Duffel Bag 40L"
   },
   "Kashmir Willow Cricket Kit": {
-    "missing": true,
-    "term": "Cricket Equipment fitness sports equipment"
+    "path": "/catalogue/kashmir-willow-cricket-kit.jpg",
+    "borrowedFrom": "Foldable Motorised Treadmill"
   },
   "Match Football with Pump": {
     "path": "/catalogue/match-football-with-pump.jpg",
@@ -866,8 +864,8 @@
     "term": "Gym Accessories fitness sports equipment"
   },
   "Anti-Slip TPE Yoga Mat 6mm": {
-    "missing": true,
-    "term": "Yoga Mats fitness sports equipment"
+    "path": "/catalogue/anti-slip-tpe-yoga-mat-6mm.jpg",
+    "borrowedFrom": "Dry-Fit Sports Jersey Set"
   },
   "Resistance Band Set of 5": {
     "path": "/catalogue/resistance-band-set-of-5.jpg",
@@ -900,8 +898,8 @@
     "term": "Exercise Equipment fitness sports equipment"
   },
   "Class 10 Science Reference Set": {
-    "missing": true,
-    "term": "Academic Books book stationery"
+    "path": "/catalogue/class-10-science-reference-set.jpg",
+    "borrowedFrom": "A5 Ruled Notebooks (Pack of 6)"
   },
   "Engineering Mechanics Textbook": {
     "path": "/catalogue/engineering-mechanics-textbook.jpg",
@@ -914,16 +912,16 @@
     "term": "Engineering Books book stationery"
   },
   "Data Structures and Algorithms Handbook": {
-    "missing": true,
-    "term": "Computer Science Books book stationery"
+    "path": "/catalogue/data-structures-and-algorithms-handbook.jpg",
+    "borrowedFrom": "Gel Pen Set (Pack of 10)"
   },
   "The Last Monsoon (Paperback)": {
-    "missing": true,
-    "term": "Fiction book stationery"
+    "path": "/catalogue/the-last-monsoon-paperback.jpg",
+    "borrowedFrom": "Drawing Pencil Set with Sharpener"
   },
   "Mindful Productivity (Hardcover)": {
-    "missing": true,
-    "term": "Non-fiction book stationery"
+    "path": "/catalogue/mindful-productivity-hardcover.jpg",
+    "borrowedFrom": "Desk Organiser and Stationery Kit"
   },
   "A5 Ruled Notebooks (Pack of 6)": {
     "path": "/catalogue/a5-ruled-notebooks-pack-of-6.jpg",
@@ -996,8 +994,8 @@
     "term": "Educational Toys toy children"
   },
   "Die-Cast Action Figure Set": {
-    "missing": true,
-    "term": "Action Figures toy children"
+    "path": "/catalogue/die-cast-action-figure-set.jpg",
+    "borrowedFrom": "Musical Rattle and Teether Set"
   },
   "Family Strategy Board Game": {
     "path": "/catalogue/family-strategy-board-game.jpg",
@@ -1040,8 +1038,8 @@
     "term": "Baby Care toy children"
   },
   "Anti-Colic Feeding Bottle Set": {
-    "missing": true,
-    "term": "Feeding Accessories toy children"
+    "path": "/catalogue/anti-colic-feeding-bottle-set.jpg",
+    "borrowedFrom": "Water Resistant School Bag 30L"
   },
   "Musical Rattle and Teether Set": {
     "path": "/catalogue/musical-rattle-and-teether-set.jpg",
@@ -1074,28 +1072,28 @@
     "term": "Car Accessories car automotive accessory"
   },
   "Universal Bike Phone Mount": {
-    "missing": true,
-    "term": "Bike Accessories car automotive accessory"
+    "path": "/catalogue/universal-bike-phone-mount.jpg",
+    "borrowedFrom": "Car Interior Detailing Kit"
   },
   "ISI Certified Full Face Helmet": {
-    "missing": true,
-    "term": "Helmets car automotive accessory"
+    "path": "/catalogue/isi-certified-full-face-helmet.jpg",
+    "borrowedFrom": "Car Interior Detailing Kit"
   },
   "Premium Leatherette Seat Covers": {
-    "missing": true,
-    "term": "Seat Covers car automotive accessory"
+    "path": "/catalogue/premium-leatherette-seat-covers.jpg",
+    "borrowedFrom": "Car Interior Detailing Kit"
   },
   "Car Shampoo and Microfibre Combo": {
-    "missing": true,
-    "term": "Vehicle Cleaning car automotive accessory"
+    "path": "/catalogue/car-shampoo-and-microfibre-combo.jpg",
+    "borrowedFrom": "Car Interior Detailing Kit"
   },
   "Magnetic Dashboard Mobile Holder": {
-    "missing": true,
-    "term": "Mobile Holders car automotive accessory"
+    "path": "/catalogue/magnetic-dashboard-mobile-holder.jpg",
+    "borrowedFrom": "Car Interior Detailing Kit"
   },
   "Car Boot Organiser with Air Pump": {
-    "missing": true,
-    "term": "Travel Accessories car automotive accessory"
+    "path": "/catalogue/car-boot-organiser-with-air-pump.jpg",
+    "borrowedFrom": "Car Interior Detailing Kit"
   },
   "Adult Dog Dry Food 4kg": {
     "path": "/catalogue/adult-dog-dry-food-4kg.jpg",
@@ -1138,8 +1136,8 @@
     "term": "Pet Accessories pet dog cat"
   },
   "Pet Grooming Brush and Shampoo Kit": {
-    "missing": true,
-    "term": "Grooming Products pet dog cat"
+    "path": "/catalogue/pet-grooming-brush-and-shampoo-kit.jpg",
+    "borrowedFrom": "Indoor Cat Dry Food 2kg"
   },
   "Washable Pet Bed Medium": {
     "path": "/catalogue/washable-pet-bed-medium.jpg",
@@ -1152,7 +1150,7 @@
     "term": "Pet Beds pet dog cat"
   },
   "Stainless Steel Pet Bowl Set": {
-    "missing": true,
-    "term": "Feeding Accessories pet dog cat"
+    "path": "/catalogue/stainless-steel-pet-bowl-set.jpg",
+    "borrowedFrom": "Chew Rope and Ball Toy Set"
   }
 }
