@@ -26,9 +26,15 @@ export function runMigrations() {
     // Real photography: products seeded before the photo catalogue existed still
     // carry generated artwork, so swap in the local photograph by product name.
     let reimaged = 0;
-    for (const product of filter('products', (p) => Boolean(PHOTOS[p.name]))) {
-      const photo = PHOTOS[product.name];
-      if (product.images?.[0] !== photo) {
+    const photoKeys = Object.keys(PHOTOS);
+    for (const product of filter('products', () => true)) {
+      // Seeded names are "<brand> <catalogue noun>", so match on the noun suffix.
+      const key =
+        PHOTOS[product.name] !== undefined
+          ? product.name
+          : photoKeys.find((k) => product.name?.endsWith(k));
+      const photo = key ? PHOTOS[key] : null;
+      if (photo && product.images?.[0] !== photo) {
         update('products', product.id, { images: [photo] });
         reimaged += 1;
       }

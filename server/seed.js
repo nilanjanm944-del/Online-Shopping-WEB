@@ -105,8 +105,9 @@ function buildProduct(dept, deptIndex, sub, noun, n) {
     petType: pick(PET_TYPES, seed),
   });
 
-  // Real CC0 photography when available, generated artwork otherwise.
-  const photo = PHOTOS[name];
+  // Real CC0 photography when available, generated artwork otherwise. The photo
+  // map is keyed by catalogue noun; product names add a brand prefix.
+  const photo = PHOTOS[noun] || PHOTOS[name];
   const images = photo
     ? [photo]
     : [0, 1, 2].map(
