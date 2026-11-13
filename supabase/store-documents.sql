@@ -13,11 +13,14 @@
 
 create table if not exists public.store_documents (
   collection text        not null,
-  id         uuid        not null,
+  id         text        not null,
   payload    jsonb       not null,
   updated_at timestamptz not null default now(),
   primary key (collection, id)
 );
+
+-- `id` is text, not uuid: documents keep their own ids (most are UUIDs, but
+-- the settings row uses the literal id 'site'), so a uuid column would reject it.
 
 create index if not exists store_documents_collection_idx
   on public.store_documents (collection);

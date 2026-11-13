@@ -193,12 +193,15 @@ export async function flushSupabase() {
         if (!res.ok) throw new Error(`upsert HTTP ${res.status}: ${(await res.text()).slice(0, 160)}`);
       }
       if (deletes.length) {
-        const list = deletes.map((id) => `"${id}"`).join(',');
-        const res = await request(`/rest/v1/${TABLE}?collection=eq.${encodeURIComponent(collection)}&id=in.(${list})`, {
-          method: 'DELETE',
-          headers: { Prefer: 'return=minimal' },
-        });
-        if (!res.ok) throw new Error(`delete HTTP ${res.status}: ${(await res.text()).slice(0, 160)}`);
+        // One request per id: PostgREST `in.(...)` lists cannot carry arbitrary
+        // document ids (e.g. the settings row id "site") safely.
+        for (const id of deletes) {
+          const res = await request(
+            `/rest/v1/${TABLE}?collection=eq.${encodeURIComponent(collection)}&id=eq.${encodeURIComponent(id)}`,
+            { method: 'DELETE', headers: { Prefer: 'return=minimal' } }
+          );
+          if (!res.ok) throw new Error(`delete HTTP ${res.status}: ${(await res.text()).slice(0, 160)}`);
+        }
       }
       state.lastWriteError = null;
     } catch (err) {
