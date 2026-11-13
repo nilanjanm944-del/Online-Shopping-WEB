@@ -293,6 +293,8 @@ export default function Checkout() {
                 <Field label="City" required><Input {...field('city')} required /></Field>
                 <Field label="State" required>
                   <select
+                    id="co-state"
+                    name="state"
                     className="w-full rounded-xl border border-ink-300 bg-white px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200 dark:border-ink-700 dark:bg-ink-950 dark:focus:ring-brand-900"
                     value={form.state}
                     onChange={(e) => setForm({ ...form, state: e.target.value })}
