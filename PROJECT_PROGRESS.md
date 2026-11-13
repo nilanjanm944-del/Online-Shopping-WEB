@@ -2,7 +2,7 @@
 
 > Read this file first when resuming development. It records what is built, what is
 > verified, what is pending and which credentials are still required.
-> Last updated: phase 8 (finalisation).
+> Last updated: phase 9 (checkout repair, real product photography, installable app).
 
 ## 1. Current status
 
@@ -16,6 +16,7 @@
 | 6 | Admin dashboard, products, orders, customers, coupons, content | ✅ Complete |
 | 7 | Blog, vlog, support, reviews, newsletter, PWA, i18n scaffold | ✅ Complete |
 | 8 | Responsive polish, testing, docs, deployment prep | ✅ Complete |
+| 9 | Checkout/payment repair, DIWALI26 coupon, CC0 product photos, PWA install | ✅ Complete |
 
 ## 2. Completed modules
 
@@ -91,6 +92,12 @@ online payment is disabled with an explicit message, and no fake success is show
   admin access for the seeded administrator, unknown-endpoint 404.
 - Dependency security scan — see the latest run summary.
 - Live deployment — verified after build.
+- Live browser check (revision 32): login, product page rendering a `/catalogue/*.jpg` photo,
+  add to cart, cart, and the complete checkout page — address form, "2. Payment method" with
+  Razorpay (disabled, explained), "Test payment (no money charged)" and "Cash on Delivery", plus an
+  enabled "Pay ₹2,719 in test mode" button. 12/12 steps, 4 assertions, no page or console errors.
+- Live API checks: `/api/products` returns `/catalogue/*.jpg` paths; `DIWALI26` validates
+  (25%, ₹750 off ₹3,000) while `DIWALI25` is rejected as invalid.
 
 ## 6. Known limitations
 
@@ -101,6 +108,9 @@ online payment is disabled with an explicit message, and no fake success is show
 - Persistent uploads need a disk or Supabase Storage; container-local uploads reset on
   redeploy.
 - Free hosting plan: 1 GB RAM / 1 vCPU per app — for development and testing.
+- The checkout address inputs carry no `name`/`id` attribute (they are labelled by the wrapping
+  `Field` component), so scripted form filling needs a different locator strategy. The sandbox
+  payment confirmation endpoint is not covered by an automated test.
 
 ## 7. Required configuration (owner actions)
 
@@ -125,7 +135,15 @@ online payment is disabled with an explicit message, and no fake success is show
 ## Deployment record
 
 - Live URL: https://vulesrkzir.dev.onappjet.com (AppJet hosting, port 80, Node 26 Alpine image)
+- Current build: build-1794542750686-aa172262 (revision 32) — checkout route repair, CC0 product
+  photography, DIWALI26 coupon and PWA install; readiness confirmed by 3 consecutive HTTP probes.
 - Build: build-1794469165435-83c11520 — build completed, image security scan passed (98 packages, 0 blocking findings)
+- Checkout repair worth remembering: `RequireAuth` renders `<Outlet />` and ignores its `children`, so
+  `<Route path="/checkout" element={<RequireAuth><Checkout /></RequireAuth>} />` mounted an empty page.
+  Guarded pages must be layout routes: `<Route element={<RequireAuth />}><Route path="checkout" …/></Route>`.
+- Product photography: 170/170 demonstration products resolve a real CC0 image. Files live in
+  `public/catalogue/` with attribution in `public/catalogue/CREDITS.md`; `server/catalogue-photos.js`
+  keys the map by catalogue noun and the seeder looks up `PHOTOS[noun] || PHOTOS[name]`.
 - Verified live: `/`, `/shop`, `/categories`, `/cart`, `/blog`, `/admin/login`, `/help` at 1280px and 390px (HTTP 200, no page/asset errors); `/api/health`, `/api/categories`, `/api/products` return 200 and unknown endpoints return JSON 404.
 - Startup fix worth remembering: `server/data/catalogue.js` was excluded by the `data/` rule in `.gitignore`, so the deployed image crashed with ERR_MODULE_NOT_FOUND. The catalogue source now lives at `server/catalogue-data.js` (tracked by Git). Never place required source files under a Git-ignored path.
 
